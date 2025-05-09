@@ -16,7 +16,7 @@ export default function Portfolio() {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <img src="/img/news.png" alt="News Authenticator" />
+            <img src="/img/News.png" alt="News Authenticator" />
           </a>
         </div>
       </div>
