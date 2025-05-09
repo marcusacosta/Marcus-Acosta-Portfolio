@@ -23,7 +23,7 @@ export default function Experience() {
             <div className="texts">
               <h3>News Outlet Authenticator</h3>
               <h4>Python, Flask, HTML, CSS, Javascript</h4>
-              <p>Flask application uses a machine learning model to classify news statements as real or fake, enhanced by a reputation score for the source domain. Users can interact through a clean web interface where they paste text and receive an immediate prediction, including confidence scores. The app features a fully testable REST API, vectorized inference using scikit-learn, caching for performance, and a lightweight frontend built with HTML, CSS, and JavaScript.</p>
+              <p>Flask application that uses a machine learning model to classify news statements as real or fake, enhanced by a reputation score for the source domain. Users can interact through a clean web interface where they paste text and receive an immediate prediction, including confidence scores. The app features a fully testable REST API, vectorized inference using scikit-learn, caching for performance, and a lightweight frontend built with HTML, CSS, and JavaScript.</p>
             </div>
           </div>
         </div>
