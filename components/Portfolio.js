@@ -5,7 +5,7 @@ export default function Portfolio() {
         <h2>Portfolio</h2>
         <div className="portfolio-container">
           <a 
-            href="https://github.com/marcusacosta/Route-Optimizer" 
+            href="https://github.com/marcusacosta/limited-item-drop" 
             target="_blank" 
             rel="noopener noreferrer"
           >
