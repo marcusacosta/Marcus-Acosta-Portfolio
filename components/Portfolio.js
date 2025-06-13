@@ -11,12 +11,13 @@ export default function Portfolio() {
           >
             <img src="/img/map.png" alt="Route Optimizer" />
           </a>
+
           <a 
-            href="https://github.com/marcusacosta/News-Authenticator" 
+            href="https://github.com/marcusacosta/Phishing-Link-Detector" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <img src="/img/News.png" alt="News Authenticator" />
+            <img src="/img/phishing.png" alt="Phishing Detector" />
           </a>
         </div>
       </div>
