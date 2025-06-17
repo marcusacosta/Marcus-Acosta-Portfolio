@@ -9,7 +9,7 @@ export default function Portfolio() {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <img src="/img/map.png" alt="Route Optimizer" />
+            <img src="/img/item-drop.png" alt="Route Optimizer" />
           </a>
 
           <a 
