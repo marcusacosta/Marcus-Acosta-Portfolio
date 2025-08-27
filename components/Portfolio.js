@@ -16,7 +16,7 @@ export default function Portfolio() {
       outcome: "Full-stack app that monitors Ticketmaster's API for price changes across hundreds of events and delivers real-time SMS alerts when tickets hit a target price.",
       metrics: ["-20% avg savings", "500+ alerts sent", "24/7 monitoring"],
       tech: ["Javascript", "Node.js", "React", "PostgreSQL"],
-      githubUrl: "https://github.com/marcusacosta/ticket-price-alert",
+      githubUrl: "https://github.com/marcusacosta/tix_compare",
       imageSrc: "/img/macbook.jpg",
       imageAlt: "Ticket Price Alert - Price Monitoring System"
     }

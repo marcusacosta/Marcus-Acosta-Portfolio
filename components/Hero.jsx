@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import FloatingClouds from "./FloatingClouds";
 
 export default function Hero() {
   const [classes, setClasses] = useState('');
@@ -9,6 +10,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className={classes}>
+      <FloatingClouds />
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-headline">
@@ -21,7 +23,6 @@ export default function Hero() {
           </p>
           
           <div className="hero-ctas">
-            <a href="#portfolio" className="cta-primary">View Projects</a>
             <a href="/resume.pdf" className="cta-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
           </div>
         </div>
