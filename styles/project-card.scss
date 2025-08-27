@@ -156,9 +156,10 @@
 // Responsive grid layout
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, minmax(500px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center;
   
   &.visible .project-card {
     opacity: 1;
@@ -169,6 +170,11 @@
     .project-card:nth-child(#{$i + 1}) {
       transition-delay: #{$i * .1s};
     }
+  }
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   @media (max-width: 768px) {

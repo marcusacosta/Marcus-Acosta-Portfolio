@@ -1,4 +1,14 @@
 import {useEffect, useState} from "react";
+import { 
+  JavaScriptIcon, 
+  PythonIcon, 
+  ReactIcon, 
+  TypeScriptIcon, 
+  FlaskIcon, 
+  SQLIcon, 
+  PostgreSQLIcon, 
+  MySQLIcon 
+} from './SkillIcons';
 
 export default function Skills() {
   const [extraClasses,setExtraClasses] = useState('');
@@ -7,12 +17,14 @@ export default function Skills() {
       <div className="center">
         <h2>Skills</h2>
         <div className={extraClasses + "skills-container"}>
-          <div className="skill-box"><img src="/img/js.png" alt=""/><span>Javascript</span></div>
-          <div className="skill-box"><img src="/img/python.png" alt=""/><span>Python</span></div>
-          <div className="skill-box"><img src="/img/react.png" alt=""/><span>React</span></div>
-          <div className="skill-box"><img src="/img/flask.png" alt=""/><span>Flask</span></div>
-          <div className="skill-box"><img src="/img/typescript.png" alt=""/><span>TypeScript</span></div>
-          <div className="skill-box"><img src="/img/sql.png" alt=""/><span>SQL</span></div>
+          <div className="skill-box"><JavaScriptIcon /><span>JavaScript</span></div>
+          <div className="skill-box"><PythonIcon /><span>Python</span></div>
+          <div className="skill-box"><ReactIcon /><span>React</span></div>
+          <div className="skill-box"><TypeScriptIcon /><span>TypeScript</span></div>
+          <div className="skill-box"><FlaskIcon /><span>Flask</span></div>
+          <div className="skill-box"><SQLIcon /><span>SQL</span></div>
+          <div className="skill-box"><PostgreSQLIcon /><span>PostgreSQL</span></div>
+          <div className="skill-box"><MySQLIcon /><span>MySQL</span></div>
         </div>
       </div>
     </section>

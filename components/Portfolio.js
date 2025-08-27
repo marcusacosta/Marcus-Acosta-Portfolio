@@ -3,19 +3,19 @@ import ProjectCard from './ProjectCard';
 export default function Portfolio() {
   const projects = [
     {
-      title: "Expense Calendar Cloud",
-      outcome: "Cloud-based expense tracking system with calendar integration for personal and business financial management.",
+      title: "Collaborative Expense Calendar",
+      outcome: "Cloud-hosted web app that lets users (roommates, couples, or teams) track shared expenses on a calendar, split costs by percentage, and receive real-time alerts when new or modified expenses affect their balance.",
       metrics: ["100+ users", "Real-time sync", "Multi-device access"],
-      tech: ["Python", "FastAPI", "PostgreSQL", "AWS", "React"],
+      tech: ["Python", "JavaScript", "Flask", "React", "PostgreSQL"],
       githubUrl: "https://github.com/marcusacosta/expense-calendar-cloud",
       imageSrc: "/img/macbook2.jpg",
-      imageAlt: "Expense Calendar Cloud - Financial Management System"
+      imageAlt: "Collaborative Expense Calendar - Financial Management System"
     },
     {
       title: "Ticket Price Alert",
-      outcome: "Smart notification system that tracks ticket prices and alerts users when prices drop to their target range.",
+      outcome: "Full-stack app that monitors Ticketmaster's API for price changes across hundreds of events and delivers real-time SMS alerts when tickets hit a target price.",
       metrics: ["-20% avg savings", "500+ alerts sent", "24/7 monitoring"],
-      tech: ["Python", "Flask", "SQLite", "Selenium"],
+      tech: ["Javascript", "Node.js", "React", "PostgreSQL"],
       githubUrl: "https://github.com/marcusacosta/ticket-price-alert",
       imageSrc: "/img/macbook.jpg",
       imageAlt: "Ticket Price Alert - Price Monitoring System"

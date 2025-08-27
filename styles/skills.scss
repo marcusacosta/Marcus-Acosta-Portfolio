@@ -7,20 +7,34 @@ section#skills h2{
 }
 .skills-container{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .skill-box{
   opacity:0;
   transition: all .4s linear;
-  background-color: #3D3E42;
-  padding: 40px;
+  background: linear-gradient(135deg, #3D3E42 0%, #4a4b4f 100%);
+  padding: 30px 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
   left: -20px;
+  border: 2px solid transparent;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #FAC86B;
+    box-shadow: 0 10px 25px rgba(250, 200, 107, 0.2);
+  }
+  
   span{
     display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 15px;
   }
 }
 .skills-container.visible .skill-box{
@@ -31,8 +45,56 @@ section#skills h2{
   .skill-box:nth-child(#{$i + 1}){transition-delay: #{$i  * .1s}};
 }
 
-.skill-box img{
+.skill-box svg {
   display: inline-block;
-  margin-bottom:10px;
-  max-width:60px;
+  margin-bottom: 0;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 1rem;
+  }
+  
+  .skill-box {
+    padding: 25px 15px;
+    
+    img {
+      max-width: 40px;
+      height: 40px;
+    }
+    
+    span {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skill-box {
+    padding: 20px 10px;
+    
+    img {
+      max-width: 35px;
+      height: 35px;
+    }
+    
+    span {
+      font-size: 0.75rem;
+    }
+  }
 }

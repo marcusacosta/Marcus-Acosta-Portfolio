@@ -35,7 +35,7 @@ export default function ProjectCard({
       aria-label={`View ${title} project on GitHub`}
     >
       <div className="project-image">
-        {title === "Expense Calendar Cloud" ? (
+        {title === "Collaborative Expense Calendar" ? (
           <div className="calendar-container">
             <CalendarUI />
             <div className="project-overlay">
