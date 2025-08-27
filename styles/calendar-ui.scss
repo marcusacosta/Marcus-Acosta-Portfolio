@@ -1,0 +1,176 @@
+.calendar-ui {
+  background: linear-gradient(135deg, #2a2b2f 0%, #3D3E42 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #4a4b4f;
+  max-width: 400px;
+  margin: 0 auto;
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    .month-year h3 {
+      color: #fff;
+      font-family: 'Source Serif Pro', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    .calendar-controls {
+      display: flex;
+      gap: 0.5rem;
+      
+      .nav-btn {
+        background: #4a4b4f;
+        border: none;
+        color: #FAC86B;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: #FAC86B;
+          color: #2a2b2f;
+        }
+      }
+    }
+  }
+  
+  .calendar-grid {
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 0.5rem;
+      
+      div {
+        text-align: center;
+        color: #FAC86B;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.5rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+    
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      
+      .day {
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        position: relative;
+        min-height: 50px;
+        
+        &.has-day {
+          background: #3D3E42;
+          border: 1px solid #4a4b4f;
+          
+          &:hover {
+            background: #4a4b4f;
+            border-color: #FAC86B;
+          }
+        }
+        
+        .day-number {
+          color: #fff;
+          font-weight: 600;
+          font-size: 0.9rem;
+          margin-bottom: 0.2rem;
+        }
+        
+        .expense-indicator {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.2rem;
+          
+          .expense-dot {
+            width: 6px;
+            height: 6px;
+            background: #FAC86B;
+            border-radius: 50%;
+          }
+          
+          .expense-amount {
+            color: #FAC86B;
+            font-size: 0.7rem;
+            font-weight: 600;
+          }
+        }
+        
+        &.has-expense {
+          background: linear-gradient(135deg, #3D3E42 0%, #4a4b4f 100%);
+          border-color: #FAC86B;
+          
+          .day-number {
+            color: #FAC86B;
+          }
+        }
+      }
+    }
+  }
+  
+  .calendar-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #4a4b4f;
+    
+    .expense-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .total-label {
+        color: #ccc;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      
+      .total-amount {
+        color: #FAC86B;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .calendar-ui {
+    padding: 1rem;
+    
+    .calendar-header .month-year h3 {
+      font-size: 1.2rem;
+    }
+    
+    .days .day {
+      min-height: 40px;
+      
+      .day-number {
+        font-size: 0.8rem;
+      }
+      
+      .expense-amount {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}

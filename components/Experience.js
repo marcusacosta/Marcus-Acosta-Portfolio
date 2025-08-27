@@ -2,7 +2,7 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="center">
-        <h2>Projects</h2>
+        <h2>Experience</h2>
         <div className="timeline">
 
           <div className="item">
@@ -11,10 +11,12 @@ export default function Experience() {
               <div className="line"></div>
             </div>
             <div className="texts">
-              <h3>Limited Jacket Drop</h3>
-              <h4>Python, MySql, React</h4>
+              <h3>Computer Science Student</h3>
+              <h4>Oregon State University • 2022 - Present</h4>
               <p>
-                Simulated flash sale system that mimics real-world queue mechanics for limited-edition product drops. Users are placed in a first-in, first-out queue where purchases are only allowed when inventory is available and a valid access code is entered. The backend Flask API enforces queue position, rate-limiting, and transactional inventory updates using a MySQL database. The React frontend displays live product status and queue progression. Designed to showcase backend logic, concurrency handling, and real-time state transitions in a high-demand environment.              
+                Currently pursuing a Bachelor of Science in Computer Science with a focus on backend development, 
+                data structures, and software engineering principles. Actively working on personal projects to 
+                develop practical skills in Python, FastAPI, React, and database management.
               </p>
             </div>
           </div>
@@ -25,10 +27,12 @@ export default function Experience() {
               <div className="line"></div>
             </div>
             <div className="texts">
-              <h3>Phishing Link Detector</h3>
-              <h4>React, TypeScript, CSS</h4>
+              <h3>Software Development Projects</h3>
+              <h4>Personal Portfolio • 2023 - Present</h4>
               <p>
-                Frontend web application that identifies suspicious links in pasted messages by analyzing shortened URLs and risky domain extensions. Built with React and TypeScript, it performs real-time text parsing and displays warnings based on phishing heuristics. The app features a responsive UI with dark/light mode, fully typed data flow, and can be extended with backend or ML-based detection APIs for smarter classification.
+                Developed multiple full-stack applications including expense tracking systems, price alert services, 
+                and inventory management solutions. Gained hands-on experience with modern web technologies, 
+                cloud deployment, and best practices in software development.
               </p>
             </div>
           </div>

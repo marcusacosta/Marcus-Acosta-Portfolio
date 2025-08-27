@@ -1,0 +1,259 @@
+.ticketmaster-ui {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e1e5e9;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  .tm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    .tm-logo {
+      .tm-text {
+        color: #e31837;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+    }
+    
+    .price-alert-badge {
+      background: linear-gradient(135deg, #e31837, #c41230);
+      color: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      
+      .alert-icon {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+  .search-section {
+    margin-bottom: 1.5rem;
+    
+    .search-bar {
+      display: flex;
+      border: 2px solid #e1e5e9;
+      border-radius: 8px;
+      overflow: hidden;
+      
+      .search-input {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        outline: none;
+        font-size: 0.9rem;
+        color: #333;
+        
+        &::placeholder {
+          color: #999;
+        }
+      }
+      
+      .search-btn {
+        background: #e31837;
+        border: none;
+        color: white;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.2s ease;
+        
+        &:hover {
+          background: #c41230;
+        }
+      }
+    }
+  }
+  
+  .alerts-section {
+    margin-bottom: 1.5rem;
+    
+    .section-title {
+      color: #333;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .alerts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      
+      .alert-card {
+        background: #f8f9fa;
+        border: 1px solid #e1e5e9;
+        border-radius: 8px;
+        padding: 1rem;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          border-color: #e31837;
+          box-shadow: 0 2px 8px rgba(227, 24, 55, 0.1);
+        }
+        
+        .event-info {
+          margin-bottom: 0.8rem;
+          
+          .event-name {
+            color: #333;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0 0 0.4rem 0;
+            line-height: 1.3;
+          }
+          
+          .event-details {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            font-size: 0.8rem;
+            color: #666;
+            
+            .venue, .date {
+              display: flex;
+              align-items: center;
+              
+              &::before {
+                content: '';
+                width: 4px;
+                height: 4px;
+                background: #e31837;
+                border-radius: 50%;
+                margin-right: 0.5rem;
+              }
+            }
+          }
+        }
+        
+        .price-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.8rem;
+          
+          .price-comparison {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            
+            .original-price {
+              color: #999;
+              font-size: 0.8rem;
+              text-decoration: line-through;
+            }
+            
+            .current-price {
+              color: #e31837;
+              font-size: 1.1rem;
+              font-weight: 700;
+            }
+          }
+          
+          .savings-badge {
+            background: #e31837;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+          }
+        }
+        
+        .alert-status {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          
+          .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            
+            &.active {
+              background: #28a745;
+            }
+          }
+          
+          .status-text {
+            color: #666;
+            font-size: 0.8rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e1e5e9;
+    
+    .stat-item {
+      text-align: center;
+      
+      .stat-number {
+        display: block;
+        color: #e31837;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+      }
+      
+      .stat-label {
+        color: #666;
+        font-size: 0.7rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .ticketmaster-ui {
+    padding: 1rem;
+    
+    .tm-header .tm-logo .tm-text {
+      font-size: 1.3rem;
+    }
+    
+    .alerts-section .alerts-list .alert-card {
+      padding: 0.8rem;
+      
+      .event-info .event-name {
+        font-size: 0.8rem;
+      }
+      
+      .price-info .price-comparison .current-price {
+        font-size: 1rem;
+      }
+    }
+    
+    .stats-section {
+      gap: 0.8rem;
+      
+      .stat-item .stat-number {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
