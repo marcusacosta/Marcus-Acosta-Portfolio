@@ -7,7 +7,7 @@ export default function Portfolio() {
       outcome: "Cloud-hosted web app that lets users (roommates, couples, or teams) track shared expenses on a calendar, split costs by percentage, and receive real-time alerts when new or modified expenses affect their balance.",
       metrics: ["100+ users", "Real-time sync", "Multi-device access"],
       tech: ["Python", "JavaScript", "Flask", "React", "PostgreSQL"],
-      githubUrl: "https://github.com/marcusacosta/expense-calendar-cloud",
+      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
       imageSrc: "/img/macbook2.jpg",
       imageAlt: "Collaborative Expense Calendar - Financial Management System"
     },
@@ -25,7 +25,7 @@ export default function Portfolio() {
       outcome: "Front-end only application that uses advanced URL parsing and analysis to detect potentially malicious or fake links, helping users identify phishing attempts and stay safe online.",
       metrics: ["Real-time detection", "URL analysis", "Security focused"],
       tech: ["TypeScript", "React", "URL parsing", "Security"],
-      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
+      githubUrl: "https://github.com/marcusacosta/phishing-link-detector",
       imageSrc: "/img/phishing.png",
       imageAlt: "Phishing Link Detector - Security Tool"
     }
