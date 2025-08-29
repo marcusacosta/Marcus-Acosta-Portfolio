@@ -25,7 +25,7 @@ export default function Portfolio() {
       outcome: "Front-end only application that uses advanced URL parsing and analysis to detect potentially malicious or fake links, helping users identify phishing attempts and stay safe online.",
       metrics: ["Real-time detection", "URL analysis", "Security focused"],
       tech: ["TypeScript", "React", "URL parsing", "Security"],
-      githubUrl: "https://github.com/marcusacosta/phishing-link-detector",
+      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
       imageSrc: "/img/phishing.png",
       imageAlt: "Phishing Link Detector - Security Tool"
     }
