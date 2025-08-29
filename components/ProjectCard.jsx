@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import CalendarUI from './CalendarUI';
 import TicketmasterUI from './TicketmasterUI';
+import PhishingDetectorUI from './PhishingDetectorUI';
 
 export default function ProjectCard({ 
   title, 
@@ -45,6 +46,13 @@ export default function ProjectCard({
         ) : title === "Ticket Price Alert" ? (
           <div className="ticketmaster-container">
             <TicketmasterUI />
+            <div className="project-overlay">
+              <span className="view-project">View on GitHub →</span>
+            </div>
+          </div>
+        ) : title === "Phishing Link Detector" ? (
+          <div className="phishing-container">
+            <PhishingDetectorUI />
             <div className="project-overlay">
               <span className="view-project">View on GitHub →</span>
             </div>

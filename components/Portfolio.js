@@ -19,6 +19,15 @@ export default function Portfolio() {
       githubUrl: "https://github.com/marcusacosta/tix_compare",
       imageSrc: "/img/macbook.jpg",
       imageAlt: "Ticket Price Alert - Price Monitoring System"
+    },
+    {
+      title: "Phishing Link Detector",
+      outcome: "Front-end only application that uses advanced URL parsing and analysis to detect potentially malicious or fake links, helping users identify phishing attempts and stay safe online.",
+      metrics: ["Real-time detection", "URL analysis", "Security focused"],
+      tech: ["TypeScript", "React", "URL parsing", "Security"],
+      githubUrl: "https://github.com/marcusacosta/phishing-link-detector",
+      imageSrc: "/img/phishing.png",
+      imageAlt: "Phishing Link Detector - Security Tool"
     }
   ];
 

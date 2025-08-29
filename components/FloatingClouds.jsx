@@ -15,9 +15,9 @@ export default function FloatingClouds() {
           x: Math.random() * 100, // Random starting position
           y: Math.random() * 100,
           size: Math.random() * 80 + 60, // Random size between 60-140px
-          speed: Math.random() * 0.5 + 0.2, // Random speed
+          speed: Math.random() * 0.8 + 0.4, // Faster random speed between 0.4-1.2
           opacity: Math.random() * 0.6 + 0.3, // Random opacity between 0.3-0.9
-          delay: Math.random() * 10 // Random delay for staggered animation
+          delay: Math.random() * 6 // Shorter random delay for smoother flow
         });
       }
       
@@ -40,7 +40,7 @@ export default function FloatingClouds() {
             height: `${cloud.size * 0.6}px`,
             opacity: cloud.opacity,
             animationDelay: `${cloud.delay}s`,
-            animationDuration: `${20 / cloud.speed}s`
+            animationDuration: `${12 / cloud.speed}s`
           }}
         />
       ))}
