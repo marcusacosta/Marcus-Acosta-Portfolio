@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
           
           <div className="hero-ctas">
-            <a href="/marcus-acosta-resume.pdf" className="cta-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="/resume.pdf" className="cta-secondary" target="_blank" rel="noopener noreferrer">Resume</a>
           </div>
         </div>
         
