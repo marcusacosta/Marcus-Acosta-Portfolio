@@ -3,6 +3,7 @@ import { useState } from 'react';
 import CalendarUI from './CalendarUI';
 import TicketmasterUI from './TicketmasterUI';
 import PhishingDetectorUI from './PhishingDetectorUI';
+import FantasyFootballUI from './FantasyFootballUI';
 
 export default function ProjectCard({ 
   title, 
@@ -44,8 +45,8 @@ export default function ProjectCard({
             </div>
           </div>
         ) : title === "Fantasy Football Trade Analyzer" ? (
-          <div className="ticketmaster-container">
-            <TicketmasterUI />
+          <div className="fantasy-football-container">
+            <FantasyFootballUI />
             <div className="project-overlay">
               <span className="view-project">View on GitHub →</span>
             </div>
