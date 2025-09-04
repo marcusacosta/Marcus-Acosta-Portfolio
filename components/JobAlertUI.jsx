@@ -1,107 +1,83 @@
 export default function JobAlertUI() {
-  const jobAlerts = [
+  const messages = [
     {
-      title: "Senior Software Engineer",
-      company: "TechCorp",
-      location: "San Francisco, CA",
-      salary: "$120k - $160k",
-      posted: "2 hours ago",
-      match: "95%"
+      id: 1,
+      text: "🚨 New Job Alert!\n\nSenior Software Engineer\nTechCorp - San Francisco, CA\n$120k - $160k\n\nApply: techcorp.com/jobs/12345",
+      time: "2:34 PM",
+      isDelivered: true
     },
     {
-      title: "Full Stack Developer",
-      company: "StartupXYZ",
-      location: "Remote",
-      salary: "$90k - $130k",
-      posted: "4 hours ago",
-      match: "88%"
+      id: 2,
+      text: "💼 Job Match Found!\n\nFull Stack Developer\nStartupXYZ - Remote\n$90k - $130k\n95% match with your preferences\n\nApply: startupxyz.com/careers",
+      time: "1:15 PM",
+      isDelivered: true
+    },
+    {
+      id: 3,
+      text: "⚡ Hot Job Alert!\n\nReact Developer\nInnovateTech - Seattle, WA\n$110k - $140k\nPosted 5 minutes ago\n\nQuick apply: innovatetech.com/react-dev",
+      time: "12:45 PM",
+      isDelivered: true
     }
   ];
 
-  const userPreferences = {
-    keywords: ["JavaScript", "React", "Node.js"],
-    location: "San Francisco Bay Area",
-    salaryMin: "$100k",
-    experience: "3+ years"
-  };
-
   return (
-    <div className="job-alert-ui">
-      <div className="ja-header">
-        <div className="ja-logo">
-          <span className="ja-icon">💼</span>
-          <span className="ja-title">JobAlert</span>
+    <div className="job-alert-sms-ui">
+      <div className="sms-header">
+        <div className="header-left">
+          <span className="back-arrow">‹</span>
+          <div className="contact-info">
+            <div className="contact-avatar">📱</div>
+            <div className="contact-details">
+              <span className="contact-name">JobAlert SMS</span>
+              <span className="contact-status">Active now</span>
+            </div>
+          </div>
         </div>
-        <div className="notification-status">
-          <span className="status-dot active"></span>
-          <span className="status-text">3 New Alerts</span>
+        <div className="header-right">
+          <span className="info-icon">ⓘ</span>
         </div>
       </div>
 
-      <div className="alert-preferences">
-        <h3 className="section-title">Your Alert Preferences</h3>
-        <div className="preferences-grid">
-          <div className="pref-item">
-            <span className="pref-label">Keywords:</span>
-            <div className="pref-tags">
-              {userPreferences.keywords.map((keyword, index) => (
-                <span key={index} className="pref-tag">{keyword}</span>
+      <div className="messages-container">
+        {messages.map((message) => (
+          <div key={message.id} className="message-bubble">
+            <div className="message-content">
+              {message.text.split('\n').map((line, index) => (
+                <div key={index} className="message-line">
+                  {line}
+                </div>
               ))}
             </div>
-          </div>
-          <div className="pref-item">
-            <span className="pref-label">Location:</span>
-            <span className="pref-value">{userPreferences.location}</span>
-          </div>
-          <div className="pref-item">
-            <span className="pref-label">Min Salary:</span>
-            <span className="pref-value">{userPreferences.salaryMin}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="job-alerts-section">
-        <h3 className="section-title">Recent Job Matches</h3>
-        <div className="alerts-list">
-          {jobAlerts.map((job, index) => (
-            <div key={index} className="job-alert-card">
-              <div className="job-header">
-                <div className="job-info">
-                  <h4 className="job-title">{job.title}</h4>
-                  <p className="job-company">{job.company} • {job.location}</p>
-                </div>
-                <div className="match-score">
-                  <span className="match-percentage">{job.match}</span>
-                  <span className="match-label">Match</span>
-                </div>
-              </div>
-              
-              <div className="job-details">
-                <div className="job-salary">{job.salary}</div>
-                <div className="job-posted">Posted {job.posted}</div>
-              </div>
-              
-              <div className="alert-actions">
-                <button className="action-btn primary">View Job</button>
-                <button className="action-btn secondary">Save</button>
-              </div>
+            <div className="message-footer">
+              <span className="message-time">{message.time}</span>
+              {message.isDelivered && (
+                <span className="delivery-status">Delivered</span>
+              )}
             </div>
-          ))}
+          </div>
+        ))}
+        
+        <div className="typing-indicator">
+          <div className="typing-bubble">
+            <div className="typing-dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="stats-footer">
-        <div className="stat-item">
-          <span className="stat-number">47</span>
-          <span className="stat-label">Active Alerts</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">156</span>
-          <span className="stat-label">Jobs Matched</span>
-        </div>
-        <div className="stat-item">
-          <span className="stat-number">24/7</span>
-          <span className="stat-label">Monitoring</span>
+      <div className="message-input-container">
+        <div className="input-wrapper">
+          <span className="camera-icon">📷</span>
+          <input 
+            type="text" 
+            placeholder="Text Message" 
+            className="message-input"
+            readOnly
+          />
+          <span className="send-icon">↑</span>
         </div>
       </div>
     </div>
