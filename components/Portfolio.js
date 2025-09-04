@@ -12,13 +12,13 @@ export default function Portfolio() {
       imageAlt: "Collaborative Expense Calendar - Financial Management System"
     },
     {
-      title: "Ticket Price Alert",
-      outcome: "Full-stack app that monitors Ticketmaster's API for price changes across hundreds of events and delivers real-time SMS alerts when tickets hit a target price.",
-      metrics: ["-20% avg savings", "500+ alerts sent", "24/7 monitoring"],
-      tech: ["Javascript", "Node.js", "React", "PostgreSQL"],
-      githubUrl: "https://github.com/marcusacosta/tix_compare",
+      title: "Fantasy Football Trade Analyzer",
+      outcome: "A fullstack prototype web app that analyzes fantasy football trades by combining Yahoo Fantasy team data with Tank01 NFL player projections.",
+      metrics: ["Trade fairness scoring", "Team-need insights", "Prototype integration"],
+      tech: ["Go", "React", "REST APIs", "Yahoo + Tank01"],
+      githubUrl: "https://github.com/marcusacosta/fantasy-football-trade-analyzer",
       imageSrc: "/img/macbook.jpg",
-      imageAlt: "Ticket Price Alert - Price Monitoring System"
+      imageAlt: "Fantasy Football Trade Analyzer - Trade Analysis System"
     },
     {
       title: "Phishing Link Detector",

@@ -43,7 +43,7 @@ export default function ProjectCard({
               <span className="view-project">View on GitHub →</span>
             </div>
           </div>
-        ) : title === "Ticket Price Alert" ? (
+        ) : title === "Fantasy Football Trade Analyzer" ? (
           <div className="ticketmaster-container">
             <TicketmasterUI />
             <div className="project-overlay">
