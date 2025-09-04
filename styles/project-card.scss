@@ -3,22 +3,16 @@
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
-  cursor: pointer;
   border: 2px solid transparent;
   position: relative;
   opacity: 0;
   transform: translateX(-20px);
   transition: all 0.4s linear;
   
-  &:hover,
-  &:focus {
+  &:hover {
     transform: translateY(-8px);
     border-color: #FAC86B;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    
-    .project-overlay {
-      opacity: 1;
-    }
     
     .project-screenshot {
       transform: scale(1.05);
@@ -35,11 +29,6 @@
     .job-alert-container {
       transform: scale(1.1);
     }
-  }
-  
-  &:focus {
-    outline: 2px solid #FAC86B;
-    outline-offset: 2px;
   }
   
   .project-image {
@@ -175,6 +164,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-bottom: 1rem;
       
       .tech-badge {
         background: #3D3E42;
@@ -190,6 +180,55 @@
           background: #FAC86B;
           color: #2a2b2f;
           border-color: #FAC86B;
+        }
+      }
+    }
+    
+    .project-buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        
+        &.btn-repo {
+          background: #24292e;
+          color: #fff;
+          border: 1px solid #444;
+          
+          &:hover {
+            background: #2f363d;
+            border-color: #666;
+            transform: translateY(-1px);
+          }
+          
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        
+        &.btn-live {
+          background: #FAC86B;
+          color: #2a2b2f;
+          border: 1px solid #FAC86B;
+          
+          &:hover {
+            background: #f0b84d;
+            border-color: #f0b84d;
+            transform: translateY(-1px);
+          }
         }
       }
     }
@@ -223,10 +262,24 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
+    
+    .project-card {
+      .project-buttons {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        
+        button {
+          flex: 1;
+          min-width: 120px;
+        }
+      }
+    }
   }
   
   @media (max-width: 480px) {
     gap: 1rem;
+    padding: 0 0.5rem;
     
     .project-card {
       .project-content {
@@ -238,6 +291,18 @@
         
         .project-outcome {
           font-size: 0.9rem;
+        }
+        
+        .project-buttons {
+          flex-direction: column;
+          gap: 0.5rem;
+          
+          button {
+            width: 100%;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+          }
         }
       }
     }

@@ -5,6 +5,7 @@ import TicketmasterUI from './TicketmasterUI';
 import PhishingDetectorUI from './PhishingDetectorUI';
 import FantasyFootballUI from './FantasyFootballUI';
 import JobAlertUI from './JobAlertUI';
+import { GitHubIcon } from './SkillIcons';
 
 export default function ProjectCard({ 
   title, 
@@ -13,14 +14,18 @@ export default function ProjectCard({
   tech, 
   githubUrl, 
   imageSrc, 
-  imageAlt 
+  imageAlt,
+  liveUrl = null
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      window.open(githubUrl, '_blank', 'noopener,noreferrer');
+  const handleRepoClick = () => {
+    window.open(githubUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleLiveClick = () => {
+    if (liveUrl) {
+      window.open(liveUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -29,56 +34,32 @@ export default function ProjectCard({
       className="project-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsHovered(true)}
-      onBlur={() => setIsHovered(false)}
-      onClick={() => window.open(githubUrl, '_blank', 'noopener,noreferrer')}
-      onKeyDown={handleKeyDown}
-      tabIndex={0}
-      role="button"
-      aria-label={`View ${title} project on GitHub`}
     >
       <div className="project-image">
         {title === "Collaborative Expense Calendar" ? (
           <div className="calendar-container">
             <CalendarUI />
-            <div className="project-overlay">
-              <span className="view-project">View on GitHub →</span>
-            </div>
           </div>
         ) : title === "Fantasy Football Trade Analyzer" ? (
           <div className="fantasy-football-container">
             <FantasyFootballUI />
-            <div className="project-overlay">
-              <span className="view-project">View on GitHub →</span>
-            </div>
           </div>
         ) : title === "Phishing Link Detector" ? (
           <div className="phishing-container">
             <PhishingDetectorUI />
-            <div className="project-overlay">
-              <span className="view-project">View on GitHub →</span>
-            </div>
           </div>
         ) : title === "Job Alert App" ? (
           <div className="job-alert-container">
             <JobAlertUI />
-            <div className="project-overlay">
-              <span className="view-project">View on GitHub →</span>
-            </div>
           </div>
         ) : (
-          <>
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={400}
-              height={250}
-              className="project-screenshot"
-            />
-            <div className="project-overlay">
-              <span className="view-project">View on GitHub →</span>
-            </div>
-          </>
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={400}
+            height={250}
+            className="project-screenshot"
+          />
         )}
       </div>
       
@@ -100,6 +81,26 @@ export default function ProjectCard({
               {techItem}
             </span>
           ))}
+        </div>
+        
+        <div className="project-buttons">
+          <button 
+            className="btn-repo" 
+            onClick={handleRepoClick}
+            aria-label={`View ${title} repository on GitHub`}
+          >
+            <GitHubIcon />
+            View Repo →
+          </button>
+          {liveUrl && (
+            <button 
+              className="btn-live" 
+              onClick={handleLiveClick}
+              aria-label={`View live demo of ${title}`}
+            >
+              Live Demo →
+            </button>
+          )}
         </div>
       </div>
     </div>

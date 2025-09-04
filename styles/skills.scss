@@ -1,6 +1,6 @@
 section#skills{
   background-color: #31333B;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 section#skills h2{
   text-align: center;
@@ -67,9 +67,14 @@ section#skills h2{
   
   .skill-box {
     padding: 25px 15px;
+    transition: transform 0.2s ease;
     
-    img {
-      max-width: 40px;
+    &:active {
+      transform: scale(0.95);
+    }
+    
+    svg {
+      width: 40px;
       height: 40px;
     }
     
@@ -83,13 +88,19 @@ section#skills h2{
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    padding: 0 0.5rem;
   }
   
   .skill-box {
     padding: 20px 10px;
+    transition: transform 0.2s ease;
     
-    img {
-      max-width: 35px;
+    &:active {
+      transform: scale(0.95);
+    }
+    
+    svg {
+      width: 35px;
       height: 35px;
     }
     

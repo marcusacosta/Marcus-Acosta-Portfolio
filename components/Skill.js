@@ -10,7 +10,8 @@ import {
   SQLIcon, 
   PostgreSQLIcon, 
   MySQLIcon,
-  SQLiteIcon
+  SQLiteIcon,
+  MongoDBIcon
 } from './SkillIcons';
 
 export default function Skills() {
@@ -31,6 +32,7 @@ export default function Skills() {
           <div className="skill-box"><PostgreSQLIcon /><span>PostgreSQL</span></div>
           <div className="skill-box"><MySQLIcon /><span>MySQL</span></div>
           <div className="skill-box"><SQLiteIcon /><span>SQLite</span></div>
+          <div className="skill-box"><MongoDBIcon /><span>MongoDB</span></div>
         </div>
       </div>
     </section>
