@@ -53,3 +53,24 @@ export const MySQLIcon = () => (
     <text x="25" y="32" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">MY</text>
   </svg>
 );
+
+export const GoIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#00ADD8"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">GO</text>
+  </svg>
+);
+
+export const GinIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#009639"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">GIN</text>
+  </svg>
+);
+
+export const SQLiteIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#003B57"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">SQLite</text>
+  </svg>
+);

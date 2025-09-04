@@ -2,12 +2,15 @@ import {useEffect, useState} from "react";
 import { 
   JavaScriptIcon, 
   PythonIcon, 
+  GoIcon,
   ReactIcon, 
   TypeScriptIcon, 
   FlaskIcon, 
+  GinIcon,
   SQLIcon, 
   PostgreSQLIcon, 
-  MySQLIcon 
+  MySQLIcon,
+  SQLiteIcon
 } from './SkillIcons';
 
 export default function Skills() {
@@ -18,13 +21,16 @@ export default function Skills() {
         <h2>Skills</h2>
         <div className={extraClasses + "skills-container"}>
           <div className="skill-box"><JavaScriptIcon /><span>JavaScript</span></div>
-          <div className="skill-box"><PythonIcon /><span>Python</span></div>
-          <div className="skill-box"><ReactIcon /><span>React</span></div>
           <div className="skill-box"><TypeScriptIcon /><span>TypeScript</span></div>
-          <div className="skill-box"><FlaskIcon /><span>Flask</span></div>
+          <div className="skill-box"><PythonIcon /><span>Python</span></div>
+          <div className="skill-box"><GoIcon /><span>Go</span></div>
           <div className="skill-box"><SQLIcon /><span>SQL</span></div>
+          <div className="skill-box"><ReactIcon /><span>React</span></div>
+          <div className="skill-box"><FlaskIcon /><span>Flask</span></div>
+          <div className="skill-box"><GinIcon /><span>Gin</span></div>
           <div className="skill-box"><PostgreSQLIcon /><span>PostgreSQL</span></div>
           <div className="skill-box"><MySQLIcon /><span>MySQL</span></div>
+          <div className="skill-box"><SQLiteIcon /><span>SQLite</span></div>
         </div>
       </div>
     </section>
