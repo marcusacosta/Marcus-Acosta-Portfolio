@@ -22,9 +22,9 @@ export default function Portfolio() {
     },
     {
       title: "Job Alert App",
-      outcome: "Job Alert App that lets users sign up for job alerts by phone, built with JavaScript, Express, and SQLite; it demonstrates filter-based sign-ups, real-time notifications (simulated), and scalable alert management.",
-      metrics: ["Filter-based sign-ups", "Real-time notifications", "Scalable alert management"],
-      tech: ["JavaScript", "Express", "SQLite"],
+      outcome: "Notification system where users subscribe via a simple web page, pick categories and cities, and receive text messages when new internships are posted from the Simplify Jobs repo.",
+      metrics: ["100+ notification handler", "Filter by category & city", "Auto-scheduled checks"],
+      tech: ["JavaScript", "Node.js", "Express", "SQLite"],
       githubUrl: "https://github.com/marcusacosta/job-alert-app",
       imageSrc: "/img/job-alert.png",
       imageAlt: "Job Alert App - Job Notification System"
