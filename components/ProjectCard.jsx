@@ -4,6 +4,7 @@ import CalendarUI from './CalendarUI';
 import TicketmasterUI from './TicketmasterUI';
 import PhishingDetectorUI from './PhishingDetectorUI';
 import FantasyFootballUI from './FantasyFootballUI';
+import JobAlertUI from './JobAlertUI';
 
 export default function ProjectCard({ 
   title, 
@@ -54,6 +55,13 @@ export default function ProjectCard({
         ) : title === "Phishing Link Detector" ? (
           <div className="phishing-container">
             <PhishingDetectorUI />
+            <div className="project-overlay">
+              <span className="view-project">View on GitHub →</span>
+            </div>
+          </div>
+        ) : title === "Job Alert App" ? (
+          <div className="job-alert-container">
+            <JobAlertUI />
             <div className="project-overlay">
               <span className="view-project">View on GitHub →</span>
             </div>

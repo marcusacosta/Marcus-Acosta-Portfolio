@@ -1,0 +1,306 @@
+.job-alert-ui {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #3b82f6;
+  max-width: 400px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  .ja-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    .ja-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      .ja-icon {
+        font-size: 1.5rem;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+      }
+      
+      .ja-title {
+        color: #60a5fa;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+      }
+    }
+    
+    .notification-status {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        
+        &.active {
+          background: #10b981;
+          box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+          animation: pulse 2s infinite;
+        }
+      }
+      
+      .status-text {
+        color: #60a5fa;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .alert-preferences {
+    margin-bottom: 1.5rem;
+    
+    .section-title {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    
+    .preferences-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      
+      .pref-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        
+        .pref-label {
+          color: #cbd5e1;
+          font-weight: 500;
+          min-width: 70px;
+        }
+        
+        .pref-tags {
+          display: flex;
+          gap: 0.3rem;
+          flex-wrap: wrap;
+          
+          .pref-tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+          }
+        }
+        
+        .pref-value {
+          color: #e2e8f0;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  
+  .job-alerts-section {
+    margin-bottom: 1.5rem;
+    
+    .section-title {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    
+    .alerts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      
+      .job-alert-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 1rem;
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: #60a5fa;
+        }
+        
+        .job-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.6rem;
+          
+          .job-info {
+            flex: 1;
+            
+            .job-title {
+              color: #fff;
+              font-size: 0.9rem;
+              font-weight: 600;
+              margin: 0 0 0.2rem 0;
+              line-height: 1.2;
+            }
+            
+            .job-company {
+              color: #cbd5e1;
+              font-size: 0.75rem;
+              margin: 0;
+            }
+          }
+          
+          .match-score {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .match-percentage {
+              color: #10b981;
+              font-size: 0.9rem;
+              font-weight: 700;
+            }
+            
+            .match-label {
+              color: #94a3b8;
+              font-size: 0.6rem;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+        
+        .job-details {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.8rem;
+          
+          .job-salary {
+            color: #60a5fa;
+            font-size: 0.8rem;
+            font-weight: 600;
+          }
+          
+          .job-posted {
+            color: #94a3b8;
+            font-size: 0.7rem;
+          }
+        }
+        
+        .alert-actions {
+          display: flex;
+          gap: 0.5rem;
+          
+          .action-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            
+            &.primary {
+              background: #60a5fa;
+              color: #1e293b;
+              
+              &:hover {
+                background: #3b82f6;
+                transform: translateY(-1px);
+              }
+            }
+            
+            &.secondary {
+              background: transparent;
+              color: #60a5fa;
+              border: 1px solid #60a5fa;
+              
+              &:hover {
+                background: #60a5fa;
+                color: #1e293b;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .stats-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    
+    .stat-item {
+      text-align: center;
+      
+      .stat-number {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #60a5fa;
+        margin-bottom: 0.2rem;
+      }
+      
+      .stat-label {
+        font-size: 0.6rem;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .job-alert-ui {
+    padding: 1rem;
+    
+    .job-alerts-section .alerts-list .job-alert-card {
+      padding: 0.8rem;
+      
+      .job-header .job-info .job-title {
+        font-size: 0.85rem;
+      }
+      
+      .alert-actions {
+        flex-direction: column;
+        gap: 0.4rem;
+        
+        .action-btn {
+          width: 100%;
+        }
+      }
+    }
+    
+    .stats-footer {
+      gap: 0.5rem;
+      
+      .stat-item .stat-number {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

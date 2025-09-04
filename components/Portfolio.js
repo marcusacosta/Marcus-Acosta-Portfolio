@@ -21,13 +21,13 @@ export default function Portfolio() {
       imageAlt: "Fantasy Football Trade Analyzer - Trade Analysis System"
     },
     {
-      title: "Phishing Link Detector",
-      outcome: "Front-end only application that uses advanced URL parsing and analysis to detect potentially malicious or fake links, helping users identify phishing attempts and stay safe online.",
-      metrics: ["Real-time detection", "URL analysis", "Security focused"],
-      tech: ["TypeScript", "React", "URL parsing", "Security"],
-      githubUrl: "https://github.com/marcusacosta/phishing-link-detector",
-      imageSrc: "/img/phishing.png",
-      imageAlt: "Phishing Link Detector - Security Tool"
+      title: "Job Alert App",
+      outcome: "Job Alert App that lets users sign up for job alerts by phone, built with JavaScript, Express, and SQLite; it demonstrates filter-based sign-ups, real-time notifications (simulated), and scalable alert management.",
+      metrics: ["Filter-based sign-ups", "Real-time notifications", "Scalable alert management"],
+      tech: ["JavaScript", "Express", "SQLite"],
+      githubUrl: "https://github.com/marcusacosta/job-alert-app",
+      imageSrc: "/img/job-alert.png",
+      imageAlt: "Job Alert App - Job Notification System"
     }
   ];
 
