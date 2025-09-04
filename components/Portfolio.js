@@ -15,7 +15,7 @@ export default function Portfolio() {
       title: "Fantasy Football Trade Analyzer",
       outcome: "A fullstack prototype web app that analyzes fantasy football trades by combining Yahoo Fantasy team data with Tank01 NFL player projections.",
       metrics: ["Trade fairness scoring", "Team-need insights", "Prototype integration"],
-      tech: ["Go", "React", "REST APIs", "Yahoo + Tank01"],
+      tech: ["Go", "TypeScript", "Gin", "React"],
       githubUrl: "https://github.com/marcusacosta/fantasy-football-trade-analyzer",
       imageSrc: "/img/macbook.jpg",
       imageAlt: "Fantasy Football Trade Analyzer - Trade Analysis System"
