@@ -15,7 +15,8 @@ export default function Hero() {
         <div className="hero-text">
           <h1 className="hero-headline">
             <span className="hero-name">Marcus Acosta</span>
-            <span className="hero-role">Computer Science Post-Bacc @ Oregon State University · Open to Software Engineering Internships</span>
+            <span className="hero-role">Computer Science Post-Bacc @ Oregon State University</span>
+            <span className="hero-subheader">Open to Software Engineering Internships</span>
           </h1>
           
           <div className="hero-ctas">

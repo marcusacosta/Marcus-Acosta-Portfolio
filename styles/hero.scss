@@ -70,6 +70,14 @@ section#hero {
     opacity: 0.9;
   }
   
+  .hero-subheader {
+    color: #FAC86B;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  
   .hero-value-prop {
     color: #fff;
     font-size: 1.8rem;
@@ -164,6 +172,10 @@ section#hero {
       font-size: 2rem;
     }
     
+    .hero-subheader {
+      font-size: 1.4rem;
+    }
+    
     .hero-value-prop {
       font-size: 1.5rem;
       margin-bottom: 2.5rem;
@@ -196,6 +208,10 @@ section#hero {
     
     .hero-role {
       font-size: 1.8rem;
+    }
+    
+    .hero-subheader {
+      font-size: 1.2rem;
     }
     
     .hero-value-prop {
