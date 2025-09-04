@@ -4,9 +4,7 @@ export default function About() {
       <div className="center">
         <h2>About</h2>
         <div className="about-content">
-          <p>I&apos;m a Computer Science student at Oregon State University with a passion for building real-world applications that are scalable, reliable, and user-focused. While my skillset is broad and I&apos;m open to learning and contributing across the stack, I have a strong interest in backend engineering and cloud development. I love designing APIs, structuring databases, and deploying applications to modern platforms.</p>
-          
-          <p>Outside of tech, I stay active in the gym, enjoy exploring vintage shops, love traveling, and am always on the hunt for great food. I bring that same curiosity and energy into my coding work. I&apos;m eager to explore, adapt, and create impactful solutions.</p>
+          <p>I&apos;m a Computer Science student at Oregon State University with a passion for building scalable, user-focused applications. While my skillset spans the full stack, I have a strong interest in backend engineering, API design, and cloud development. I bring curiosity and energy from my love of travel, fitness, and exploring new places into creating impactful software solutions.</p>
         </div>
       </div>
     </section>
