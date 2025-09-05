@@ -73,7 +73,7 @@ export default function JobAlertToolUI() {
           
           <div className="message-bubble outgoing">
             <div className="message-text">
-              Thanks! I'll check these out
+              Thanks! I&apos;ll check these out
             </div>
             <div className="message-time">9:26 AM</div>
           </div>
