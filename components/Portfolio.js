@@ -3,13 +3,13 @@ import ProjectCard from './ProjectCard';
 export default function Portfolio() {
   const projects = [
     {
-      title: "Job Alert Tool",
+      title: "Job Listing Notifier",
       outcome: "Notification system where users subscribe via a simple web page, pick categories and cities, and receive text messages when new internships are posted from the Simplify Jobs repo.",
       metrics: ["Can send 10,000+ alerts/day", "Filter by category & city", "Auto-scheduled checks"],
       tech: ["JavaScript", "Node.js", "Express", "SQLite"],
       githubUrl: "https://github.com/marcusacosta/Job-Alert-Notifier",
       imageSrc: "/img/job-alert.png",
-      imageAlt: "Job Alert Tool - Job Notification System"
+      imageAlt: "Job Listing Notifier - Job Notification System"
     },
     {
       title: "Fantasy Football Trade Analyzer",

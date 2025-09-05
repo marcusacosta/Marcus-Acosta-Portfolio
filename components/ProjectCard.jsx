@@ -48,7 +48,7 @@ export default function ProjectCard({
           <div className="phishing-container">
             <PhishingDetectorUI />
           </div>
-        ) : title === "Job Alert Tool" ? (
+        ) : title === "Job Listing Notifier" ? (
           <div className="job-alert-tool-container">
             <JobAlertToolUI />
           </div>
