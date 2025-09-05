@@ -4,7 +4,7 @@ import CalendarUI from './CalendarUI';
 import TicketmasterUI from './TicketmasterUI';
 import PhishingDetectorUI from './PhishingDetectorUI';
 import FantasyFootballUI from './FantasyFootballUI';
-import JobAlertUI from './JobAlertUI';
+import JobAlertToolUI from './JobAlertToolUI';
 import { GitHubIcon } from './SkillIcons';
 
 export default function ProjectCard({ 
@@ -48,9 +48,9 @@ export default function ProjectCard({
           <div className="phishing-container">
             <PhishingDetectorUI />
           </div>
-        ) : title === "Job Alert App" ? (
-          <div className="job-alert-container">
-            <JobAlertUI />
+        ) : title === "Job Alert Tool" ? (
+          <div className="job-alert-tool-container">
+            <JobAlertToolUI />
           </div>
         ) : (
           <Image

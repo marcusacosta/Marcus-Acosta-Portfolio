@@ -3,13 +3,13 @@ import ProjectCard from './ProjectCard';
 export default function Portfolio() {
   const projects = [
     {
-      title: "Collaborative Expense Calendar",
-      outcome: "Cloud-hosted web app that lets users (roommates, couples, or teams) track shared expenses on a calendar, split costs by percentage, and receive real-time alerts when new or modified expenses affect their balance.",
-      metrics: ["Can handle 500+ concurrent users", "Real-time sync", "Multi-device access"],
-      tech: ["Python", "JavaScript", "Flask", "React", "PostgreSQL"],
-      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
-      imageSrc: "/img/macbook2.jpg",
-      imageAlt: "Collaborative Expense Calendar - Financial Management System"
+      title: "Job Alert Tool",
+      outcome: "Notification system where users subscribe via a simple web page, pick categories and cities, and receive text messages when new internships are posted from the Simplify Jobs repo.",
+      metrics: ["Can send 10,000+ alerts/day", "Filter by category & city", "Auto-scheduled checks"],
+      tech: ["JavaScript", "Node.js", "Express", "SQLite"],
+      githubUrl: "https://github.com/marcusacosta/Job-Alert-Notifier",
+      imageSrc: "/img/job-alert.png",
+      imageAlt: "Job Alert Tool - Job Notification System"
     },
     {
       title: "Fantasy Football Trade Analyzer",
@@ -21,13 +21,13 @@ export default function Portfolio() {
       imageAlt: "Fantasy Football Trade Analyzer - Trade Analysis System"
     },
     {
-      title: "Job Alert App",
-      outcome: "Notification system where users subscribe via a simple web page, pick categories and cities, and receive text messages when new internships are posted from the Simplify Jobs repo.",
-      metrics: ["Can send 10,000+ alerts/day", "Filter by category & city", "Auto-scheduled checks"],
-      tech: ["JavaScript", "Node.js", "Express", "SQLite"],
-      githubUrl: "https://github.com/marcusacosta/job-alert-app",
-      imageSrc: "/img/job-alert.png",
-      imageAlt: "Job Alert App - Job Notification System"
+      title: "Collaborative Expense Calendar",
+      outcome: "Cloud-hosted web app that lets users (roommates, couples, or teams) track shared expenses on a calendar, split costs by percentage, and receive real-time alerts when new or modified expenses affect their balance.",
+      metrics: ["Can handle 500+ concurrent users", "Real-time sync", "Multi-device access"],
+      tech: ["Python", "JavaScript", "Flask", "React", "PostgreSQL"],
+      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
+      imageSrc: "/img/macbook2.jpg",
+      imageAlt: "Collaborative Expense Calendar - Financial Management System"
     }
   ];
 
