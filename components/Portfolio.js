@@ -8,7 +8,7 @@ export default function Portfolio() {
             <div className="experience-job-title-row">
               <div className="experience-job-title-left">
                 <span className="experience-job-company">BETTORCA</span>
-                <span className="experience-job-role">Founder & Lead Software Engineer</span>
+                <span className="experience-job-role">Founding Engineer</span>
               </div>
               <a
                 href="https://bettorca.com"
@@ -32,7 +32,7 @@ export default function Portfolio() {
             <div className="experience-job-title-row">
               <div className="experience-job-title-left">
                 <span className="experience-job-company">Catch</span>
-                <span className="experience-job-role">Technical Founder</span>
+                <span className="experience-job-role">Founder & Systems Architect</span>
               </div>
               <a
                 href="https://getcatchai.com"
