@@ -7,6 +7,7 @@ const categories = [
   {
     title: "Languages",
     items: [
+      { label: "Rust", src: si("rust") },
       { label: "Go", src: si("go") },
       { label: "Python", src: si("python") },
       { label: "TypeScript", src: si("typescript") },
@@ -28,6 +29,7 @@ const categories = [
     title: "Infrastructure",
     items: [
       { label: "PostgreSQL", src: si("postgresql") },
+      { label: "Redis", src: si("redis") },
       { label: "Railway", src: si("railway") },
       { label: "EAS", src: si("expo") },
       { label: "Git", src: si("git") },
