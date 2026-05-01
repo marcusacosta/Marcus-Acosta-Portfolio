@@ -11,7 +11,7 @@
 
 .cloud {
   position: absolute;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0.1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 70%, rgba(255, 255, 255, 0.04) 100%);
   border-radius: 50px;
   filter: blur(1px);
   backface-visibility: hidden;
@@ -42,7 +42,7 @@
   }
   
   animation: float ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
   will-change: transform;
 }
 

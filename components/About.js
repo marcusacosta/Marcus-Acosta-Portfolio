@@ -4,7 +4,7 @@ export default function About() {
       <div className="center">
         <h2>About</h2>
         <div className="about-content">
-          <p>I&apos;m an aspiring software engineer who&apos;s drawn to backend development because I love working on the invisible layers that people depend on every day. What sets me apart is my excitement for the breadth of backend work from designing APIs and shaping data in SQL/NoSQL databases to building distributed systems and infrastructure. I&apos;m seeking software engineering internships where I can apply this mindset to impactful projects.</p>
+          <p>I&apos;m a software engineer and co-founder of two startups. As the primary engineer, I&apos;ve owned the full lifecycle across full-stack product work, infrastructure, and ML and AI, usually solo or on a lean team. That breadth taught me to manage delivery end to end: design, ship, and operate systems with the wide ownership early-stage companies need before roles specialize.</p>
         </div>
       </div>
     </section>

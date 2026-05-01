@@ -1,54 +1,58 @@
-import ProjectCard from './ProjectCard';
-
 export default function Portfolio() {
-  const projects = [
-    {
-      title: "Job Listing Notifier",
-      outcome: "Notification system where users subscribe via a simple web page, pick categories and cities, and receive text messages when new internships are posted from the Simplify Jobs repo.",
-      metrics: ["Can send 10,000+ alerts/day", "Filter by category & city", "Auto-scheduled checks"],
-      tech: ["JavaScript", "Node.js", "Express", "SQLite"],
-      githubUrl: "https://github.com/marcusacosta/Job-Alert-Notifier",
-      imageSrc: "/img/job-alert.png",
-      imageAlt: "Job Listing Notifier - Job Notification System"
-    },
-    {
-      title: "Fantasy Football Trade Analyzer",
-      outcome: "A fullstack prototype web app that analyzes fantasy football trades by combining Yahoo Fantasy team data with Tank01 NFL player projections.",
-      metrics: ["Able to process 1000+ trades/hour", "Team-need insights", "Prototype integration"],
-      tech: ["Go", "TypeScript", "Gin", "React"],
-      githubUrl: "https://github.com/marcusacosta/Fantasy-Football-Trade-Analyzer",
-      imageSrc: "/img/macbook.jpg",
-      imageAlt: "Fantasy Football Trade Analyzer - Trade Analysis System"
-    },
-    {
-      title: "Collaborative Expense Calendar",
-      outcome: "Cloud-hosted web app that lets users (roommates, couples, or teams) track shared expenses on a calendar, split costs by percentage, and receive real-time alerts when new or modified expenses affect their balance.",
-      metrics: ["Can handle 500+ concurrent users", "Real-time sync", "Multi-device access"],
-      tech: ["Python", "JavaScript", "Flask", "React", "PostgreSQL"],
-      githubUrl: "https://github.com/marcusacosta/collaborative-expense-calendar",
-      imageSrc: "/img/macbook2.jpg",
-      imageAlt: "Collaborative Expense Calendar - Financial Management System"
-    }
-  ];
-
   return (
-    <section id="portfolio">
+    <section id="experience">
       <div className="center">
-        <h2>Portfolio</h2>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              outcome={project.outcome}
-              metrics={project.metrics}
-              tech={project.tech}
-              githubUrl={project.githubUrl}
-              imageSrc={project.imageSrc}
-              imageAlt={project.imageAlt}
-            />
-          ))}
-        </div>
+        <h2 className="experience-heading">Experience</h2>
+        <ul className="experience-jobs-list">
+          <li className="experience-job-card">
+            <div className="experience-job-title-row">
+              <div className="experience-job-title-left">
+                <span className="experience-job-company">BETTORCA</span>
+                <span className="experience-job-role">Founder & Lead Software Engineer</span>
+              </div>
+              <a
+                href="https://bettorca.com"
+                className="experience-job-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bettorca.com
+              </a>
+            </div>
+            <p className="experience-job-detail">
+              An agentic platform
+              that unifies traditional sportsbooks behind one fast interface for
+              bettors. I ship high-frequency agents and probability models that power
+              market intelligence, plus multi-book sync, live tracking, analytics,
+              and real-time prop scanning for confident signals throughout live
+              games.
+            </p>
+          </li>
+          <li className="experience-job-card">
+            <div className="experience-job-title-row">
+              <div className="experience-job-title-left">
+                <span className="experience-job-company">Catch</span>
+                <span className="experience-job-role">Technical Founder</span>
+              </div>
+              <a
+                href="https://getcatchai.com"
+                className="experience-job-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                getcatchai.com
+              </a>
+            </div>
+            <p className="experience-job-detail">
+              A drop-in layer that learns workflows, keywords, and API
+              patterns so repetitive LLM calls can hit sub-100ms class latency. It
+              stays model-agnostic across major providers, trims token spend by
+              caching proven patterns, and keeps learned logic in
+              customer-controlled storage for institutional memory without
+              surrendering data.
+            </p>
+          </li>
+        </ul>
       </div>
     </section>
   );

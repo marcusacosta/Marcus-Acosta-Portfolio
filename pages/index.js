@@ -17,7 +17,6 @@ export default function Home() {
       });
     });
     observer.observe(document.querySelector('div.skills-container'));
-    observer.observe(document.querySelector('div.projects-grid'));
     document.querySelectorAll('section').forEach(elem => {
       observer.observe( elem );
     });

@@ -47,13 +47,6 @@ export const PostgreSQLIcon = () => (
   </svg>
 );
 
-export const MySQLIcon = () => (
-  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="50" height="50" rx="8" fill="#4479A1"/>
-    <text x="25" y="32" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">MY</text>
-  </svg>
-);
-
 export const GoIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="50" height="50" rx="8" fill="#00ADD8"/>
@@ -61,24 +54,59 @@ export const GoIcon = () => (
   </svg>
 );
 
-export const GinIcon = () => (
+export const ReactNativeIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="50" height="50" rx="8" fill="#009639"/>
-    <text x="25" y="32" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">GIN</text>
+    <rect width="50" height="50" rx="8" fill="#61DAFB"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#000">RN</text>
   </svg>
 );
 
-export const SQLiteIcon = () => (
+export const ExpoIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="50" height="50" rx="8" fill="#003B57"/>
-    <text x="25" y="32" textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">SQLite</text>
+    <rect width="50" height="50" rx="8" fill="#000020"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="11" fontWeight="bold" fill="white">Expo</text>
   </svg>
 );
 
-export const MongoDBIcon = () => (
+export const NodeJsIcon = () => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="50" height="50" rx="8" fill="#47A248"/>
-    <text x="25" y="32" textAnchor="middle" fontSize="10" fontWeight="bold" fill="white">Mongo</text>
+    <rect width="50" height="50" rx="8" fill="#339933"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="11" fontWeight="bold" fill="white">Node</text>
+  </svg>
+);
+
+export const OnnxIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#373737"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="11" fontWeight="bold" fill="white">ONNX</text>
+  </svg>
+);
+
+export const RailwayIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#0B0D1A"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="12" fontWeight="bold" fill="white">RW</text>
+  </svg>
+);
+
+export const EasIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#4630EB"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">EAS</text>
+  </svg>
+);
+
+export const DockerIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#2496ED"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="10" fontWeight="bold" fill="white">Docker</text>
+  </svg>
+);
+
+export const CicdIcon = () => (
+  <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="50" height="50" rx="8" fill="#2088FF"/>
+    <text x="25" y="32" textAnchor="middle" fontSize="10" fontWeight="bold" fill="white">CI/CD</text>
   </svg>
 );
 

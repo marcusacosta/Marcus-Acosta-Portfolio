@@ -1,8 +1,208 @@
 section#experience{
+  background-color: #18191e;
+  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.28);
+  padding: 2.5rem 0 120px;
 
-  h2{
-    position:relative;
-    top:-25px;
+  .experience-heading {
+    position: relative;
+    top: -12px;
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 72px;
+      height: 3px;
+      margin: 0.85rem auto 0;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, $gold 35%, $gold 65%, transparent);
+      opacity: 0.95;
+    }
+  }
+
+  .experience-jobs-list {
+    list-style: none;
+    max-width: 720px;
+    margin: 2.25rem auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+  }
+
+  .experience-job-card {
+    position: relative;
+    margin: 0;
+    padding: 1.35rem 1.45rem 1.45rem 1.35rem;
+    background: linear-gradient(145deg, #272830 0%, #1f2128 55%, #191a1f 100%);
+    border: 1px solid rgba(250, 200, 107, 0.2);
+    border-radius: 14px;
+    border-left: 4px solid $gold;
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 13px;
+      pointer-events: none;
+      background: radial-gradient(
+        900px 120px at 10% -20%,
+        rgba(250, 200, 107, 0.09),
+        transparent 55%
+      );
+    }
+
+    &:hover {
+      border-color: rgba(250, 200, 107, 0.42);
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.34),
+        0 0 0 1px rgba(250, 200, 107, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transform: translateY(-4px);
+    }
+  }
+
+  .experience-job-title-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .experience-job-title-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 1rem;
+    min-width: 0;
+  }
+
+  .experience-job-link {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(250, 200, 107, 0.92);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: lighten($gold, 6%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $gold;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+  }
+
+  .experience-job-company {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $gold;
+    text-shadow: 0 0 28px rgba(250, 200, 107, 0.25);
+  }
+
+  .experience-job-role {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.72);
+    letter-spacing: 0.02em;
+
+    &::before {
+      content: '·';
+      margin-right: 0.55rem;
+      color: rgba(255, 255, 255, 0.28);
+      font-weight: 400;
+    }
+  }
+
+  .experience-job-detail {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.68;
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 400;
+
+    & + & {
+      margin-top: 0.85rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 0 100px;
+
+    .experience-jobs-list {
+      margin-top: 1.85rem;
+      gap: 1.15rem;
+    }
+
+    .experience-job-card {
+      padding: 1.15rem 1.2rem 1.25rem 1.1rem;
+      border-radius: 12px;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .experience-job-detail {
+      font-size: 0.98rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .experience-job-title-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.65rem;
+    }
+
+    .experience-job-title-left {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    .experience-job-link {
+      margin-left: 0;
+      align-self: flex-end;
+    }
+
+    .experience-job-role::before {
+      display: none;
+    }
+
+    .experience-job-detail {
+      font-size: 0.94rem;
+      line-height: 1.62;
+    }
   }
 
   .timeline{
@@ -98,4 +298,17 @@ section#experience div.timeline div.item{
 }
 section#experience.visible div.timeline div.item .line{
   max-height:200px;
+}
+
+section#experience.visible .experience-job-card {
+  opacity: 1;
+  transform: translateY(0);
+
+  &:nth-child(1) {
+    transition-delay: 0.07s;
+  }
+
+  &:nth-child(2) {
+    transition-delay: 0.15s;
+  }
 }

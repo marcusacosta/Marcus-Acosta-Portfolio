@@ -4,7 +4,7 @@ section#hero {
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-  background: linear-gradient(135deg, #2a2b2f 0%, #3D3E42 100%);
+  background: linear-gradient(135deg, #16171c 0%, #222328 100%);
   position: relative;
   overflow: hidden;
   
@@ -124,7 +124,7 @@ section#hero {
     
     .cta-primary {
       background: #FAC86B;
-      color: #2a2b2f;
+      color: #16171c;
       border: 2px solid #FAC86B;
       
       &:hover {
@@ -142,7 +142,7 @@ section#hero {
       
       &:hover {
         background: #FAC86B;
-        color: #2a2b2f;
+        color: #16171c;
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(250, 200, 107, 0.3);
       }

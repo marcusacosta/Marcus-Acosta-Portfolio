@@ -3,7 +3,7 @@ export default function Header() {
     <header>
       <nav>
         <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
       <div className="social">

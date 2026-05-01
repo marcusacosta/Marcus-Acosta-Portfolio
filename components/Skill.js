@@ -1,38 +1,76 @@
-import {useEffect, useState} from "react";
-import { 
-  JavaScriptIcon, 
-  PythonIcon, 
-  GoIcon,
-  ReactIcon, 
-  TypeScriptIcon, 
-  FlaskIcon, 
-  GinIcon,
-  SQLIcon, 
-  PostgreSQLIcon, 
-  MySQLIcon,
-  SQLiteIcon,
-  MongoDBIcon
-} from './SkillIcons';
+const si = (slug) => `https://cdn.simpleicons.org/${slug}`;
+
+const REACT_ICON =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg";
+
+const categories = [
+  {
+    title: "Languages",
+    items: [
+      { label: "Go", src: si("go") },
+      { label: "Python", src: si("python") },
+      { label: "TypeScript", src: si("typescript") },
+      { label: "JavaScript", src: si("javascript") },
+      { label: "SQL", src: si("sqlite") },
+    ],
+  },
+  {
+    title: "Frameworks",
+    items: [
+      { label: "React/React Native", src: REACT_ICON },
+      { label: "Expo", src: si("expo") },
+      { label: "Flask", src: si("flask") },
+      { label: "Node.js", src: si("nodedotjs") },
+      { label: "ONNX", src: si("onnx") },
+    ],
+  },
+  {
+    title: "Infrastructure",
+    items: [
+      { label: "PostgreSQL", src: si("postgresql") },
+      { label: "Railway", src: si("railway") },
+      { label: "EAS", src: si("expo") },
+      { label: "Git", src: si("git") },
+      { label: "CI/CD Pipelines", src: si("githubactions") },
+      { label: "Docker", src: si("docker") },
+    ],
+  },
+];
 
 export default function Skills() {
-  const [extraClasses,setExtraClasses] = useState('');
   return (
     <section id="skills">
       <div className="center">
         <h2>Skills</h2>
-        <div className={extraClasses + "skills-container"}>
-          <div className="skill-box"><JavaScriptIcon /><span>JavaScript</span></div>
-          <div className="skill-box"><TypeScriptIcon /><span>TypeScript</span></div>
-          <div className="skill-box"><PythonIcon /><span>Python</span></div>
-          <div className="skill-box"><GoIcon /><span>Go</span></div>
-          <div className="skill-box"><SQLIcon /><span>SQL</span></div>
-          <div className="skill-box"><ReactIcon /><span>React</span></div>
-          <div className="skill-box"><FlaskIcon /><span>Flask</span></div>
-          <div className="skill-box"><GinIcon /><span>Gin</span></div>
-          <div className="skill-box"><PostgreSQLIcon /><span>PostgreSQL</span></div>
-          <div className="skill-box"><MySQLIcon /><span>MySQL</span></div>
-          <div className="skill-box"><SQLiteIcon /><span>SQLite</span></div>
-          <div className="skill-box"><MongoDBIcon /><span>MongoDB</span></div>
+        <div className="skills-container">
+          {categories.map((category, catIndex) => (
+            <div
+              key={category.title}
+              className="skills-category-block"
+              style={{ transitionDelay: `${catIndex * 0.08}s` }}
+            >
+              <h3 className="skills-category-heading">{category.title}</h3>
+              <div className="skills-inline-list">
+                {category.items.map(({ label, src }) => (
+                  <span
+                    key={`${category.title}-${label}`}
+                    className="skill-item"
+                  >
+                    <img
+                      className="skill-icon"
+                      src={src}
+                      alt=""
+                      width={22}
+                      height={22}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span className="skill-label">{label}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
