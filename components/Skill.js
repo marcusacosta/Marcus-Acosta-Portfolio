@@ -3,38 +3,50 @@ const si = (slug) => `https://cdn.simpleicons.org/${slug}`;
 const REACT_ICON =
   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg";
 
+const SQL_ICON =
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg";
+
 const categories = [
   {
     title: "Languages",
     items: [
-      { label: "Rust", src: si("rust") },
       { label: "Go", src: si("go") },
       { label: "Python", src: si("python") },
       { label: "TypeScript", src: si("typescript") },
       { label: "JavaScript", src: si("javascript") },
-      { label: "SQL", src: si("sqlite") },
+      { label: "SQL", src: SQL_ICON },
+      { label: "Rust", src: si("rust") },
+      { label: "Ruby", src: si("ruby") },
     ],
   },
   {
     title: "Frameworks",
     items: [
+      { label: "FastAPI", src: si("fastapi") },
       { label: "React/React Native", src: REACT_ICON },
-      { label: "Expo", src: si("expo") },
-      { label: "Flask", src: si("flask") },
-      { label: "Node.js", src: si("nodedotjs") },
+      { label: "Axum", src: si("tokio") },
+      { label: "Rails", src: si("rubyonrails") },
+    ],
+  },
+  {
+    title: "AI Tools",
+    items: [
       { label: "ONNX", src: si("onnx") },
+      { label: "LangSmith", src: si("langchain") },
+      { label: "LangGraph", src: si("langgraph") },
+      { label: "Qdrant", src: si("qdrant") },
+      { label: "Claude Code", src: si("claude") },
+      { label: "Cursor", src: si("cursor") },
     ],
   },
   {
     title: "Infrastructure",
     items: [
       { label: "PostgreSQL", src: si("postgresql") },
-      { label: "Redis", src: si("redis") },
-      { label: "Railway", src: si("railway") },
-      { label: "EAS", src: si("expo") },
-      { label: "Git", src: si("git") },
-      { label: "CI/CD Pipelines", src: si("githubactions") },
       { label: "Docker", src: si("docker") },
+      { label: "Railway", src: si("railway") },
+      { label: "Git", src: si("git") },
+      { label: "GitHub Actions", src: si("githubactions") },
     ],
   },
 ];
@@ -42,7 +54,7 @@ const categories = [
 export default function Skills() {
   return (
     <section id="skills">
-      <div className="center">
+      <div className="center skills-center">
         <h2>Skills</h2>
         <div className="skills-container">
           {categories.map((category, catIndex) => (
@@ -54,21 +66,25 @@ export default function Skills() {
               <h3 className="skills-category-heading">{category.title}</h3>
               <div className="skills-inline-list">
                 {category.items.map(({ label, src }) => (
-                  <span
+                  <button
                     key={`${category.title}-${label}`}
+                    type="button"
                     className="skill-item"
+                    aria-label={label}
                   >
                     <img
                       className="skill-icon"
                       src={src}
                       alt=""
-                      width={22}
-                      height={22}
+                      width={28}
+                      height={28}
                       loading="lazy"
                       decoding="async"
                     />
-                    <span className="skill-label">{label}</span>
-                  </span>
+                    <span className="skill-tooltip" role="tooltip">
+                      {label}
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>

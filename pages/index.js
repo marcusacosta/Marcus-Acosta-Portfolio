@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import About from "../components/About";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Skills from "../components/Skill";
 import {useEffect} from "react";
 import Portfolio from "../components/Portfolio";
+import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -26,8 +25,9 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <Skills />
       <Portfolio />
+      <Projects />
+      <Skills />
       <Contact />
       <Footer />
     </main>

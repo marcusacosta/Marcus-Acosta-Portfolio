@@ -8,7 +8,7 @@ export default function Portfolio() {
             <div className="experience-job-title-row">
               <div className="experience-job-title-left">
                 <span className="experience-job-company">BETTORCA</span>
-                <span className="experience-job-role">Founding Engineer</span>
+                <span className="experience-job-role">Co-Founder & Engineer</span>
               </div>
               <a
                 href="https://bettorca.com"
@@ -20,36 +20,20 @@ export default function Portfolio() {
               </a>
             </div>
             <p className="experience-job-detail">
-              An agentic platform
-              that unifies traditional sportsbooks behind one fast interface for
-              bettors. I ship high-frequency agents and probability models that power
-              market intelligence, plus multi-book sync, live tracking, analytics,
-              and real-time prop scanning for confident signals throughout live
-              games.
+              Bettorca is a bankroll manager for sports bettors, built on a data
+              aggregation layer that unifies books into one place. Multi-book sync
+              lets users track every slip live across their books, with high-signal
+              analytics on their performance, recommended props from our in-house
+              machine learning models, and a monitor that suggests betting more
+              conservatively or aggressively based on how they&apos;re doing.
             </p>
-          </li>
-          <li className="experience-job-card">
-            <div className="experience-job-title-row">
-              <div className="experience-job-title-left">
-                <span className="experience-job-company">Catch</span>
-                <span className="experience-job-role">Founder & Systems Architect</span>
-              </div>
-              <a
-                href="https://getcatchai.com"
-                className="experience-job-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                getcatchai.com
-              </a>
-            </div>
             <p className="experience-job-detail">
-              A drop-in layer that learns workflows, keywords, and API
-              patterns so repetitive LLM calls can hit sub-100ms class latency. It
-              stays model-agnostic across major providers, trims token spend by
-              caching proven patterns, and keeps learned logic in
-              customer-controlled storage for institutional memory without
-              surrendering data.
+              As co-founder and engineer, I own the product end to end across the
+              stack, from architecture and deployments to new features, product
+              improvements, and system plus AI observability. I also collaborate
+              with outside engineers on debugging and technical decisions, and work
+              directly with the CEO on tradeoffs and product choices that circle
+              back to the business.
             </p>
           </li>
         </ul>

@@ -13,7 +13,10 @@ section#about p{
   line-height:1.8rem;
   font-size:1.2rem;
 }
-section#about p::before{
+section#about p + p{
+  margin-top: 1.25rem;
+}
+section#about p:first-of-type::before{
   content:'';
   display:block;
   width:50px;
