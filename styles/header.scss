@@ -1,28 +1,121 @@
-header{
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(237, 235, 228, 0.9);
+  backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid $rule;
+}
+
+.masthead-inner {
   display: flex;
-  max-width: 780px;
-  margin: 0 auto;
   align-items: center;
-  padding-top:20px;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 64px;
 }
-header nav{
-  flex-grow: 1;
-  text-align: center;
+
+.masthead-mark {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  min-width: 0;
+
+  .masthead-name {
+    font-family: $mono;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .masthead-discipline {
+    font-family: $mono;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $ink-3;
+    white-space: nowrap;
+  }
+
+  &:hover .masthead-discipline {
+    color: $accent;
+  }
 }
-header nav a{
-  color:rgba(255,255,255,.6);
-  padding: 10px 10px;
-  text-decoration: none;
+
+.masthead-nav {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.9rem, 2vw, 1.9rem);
 }
-header nav a:hover{
-  color:white;
+
+.masthead-link {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: $mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $ink-2;
+  padding: 0.35rem 0;
+  transition: color 0.18s $ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: $accent;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.24s $ease;
+  }
+
+  .masthead-link-num {
+    font-size: 0.62rem;
+    color: $ink-3;
+    transition: color 0.18s $ease;
+  }
+
+  &:hover {
+    color: $ink;
+
+    &::after {
+      transform: scaleX(1);
+    }
+
+    .masthead-link-num {
+      color: $accent;
+    }
+  }
 }
-header div.social a{
-  display:inline-block;
+
+@media (max-width: 760px) {
+  .masthead-mark .masthead-discipline {
+    display: none;
+  }
+
+  .masthead-link-num {
+    display: none;
+  }
 }
-header div.social a svg{
-  height:20px;
-  fill:rgba(255,255,255,.6);
-  display:inline-block;
-  margin: 0 10px;
+
+@media (max-width: 560px) {
+  .masthead-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .masthead-nav {
+    gap: 0.95rem;
+    flex-wrap: wrap;
+  }
 }

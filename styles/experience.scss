@@ -1,414 +1,95 @@
-section#experience,
-section#projects {
-  background-color: #18191e;
-  padding: 2.5rem 0 120px;
+.work-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+  gap: clamp(1.75rem, 5vw, 5rem);
+  align-items: start;
 }
 
-section#projects {
-  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.28);
-}
+.work-side {
+  position: sticky;
+  top: 96px;
 
-section#experience,
-section#projects {
-  .experience-heading {
-    position: relative;
-    top: -12px;
-    text-align: center;
-    font-size: clamp(1.75rem, 4vw, 2rem);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 72px;
-      height: 3px;
-      margin: 0.85rem auto 0;
-      border-radius: 2px;
-      background: linear-gradient(90deg, transparent, $gold 35%, $gold 65%, transparent);
-      opacity: 0.95;
-    }
-  }
-
-  .experience-jobs-list {
-    list-style: none;
-    max-width: 720px;
-    margin: 2.25rem auto 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.35rem;
-  }
-
-  .experience-job-card {
-    position: relative;
-    margin: 0;
-    padding: 1.35rem 1.45rem 1.45rem 1.35rem;
-    background: linear-gradient(145deg, #272830 0%, #1f2128 55%, #191a1f 100%);
-    border: 1px solid rgba(250, 200, 107, 0.2);
-    border-radius: 14px;
-    border-left: 4px solid $gold;
-    box-shadow:
-      0 12px 32px rgba(0, 0, 0, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    opacity: 0;
-    transform: translateY(14px);
-    transition:
-      opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.25s ease,
-      box-shadow 0.25s ease;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 13px;
-      pointer-events: none;
-      background: radial-gradient(
-        900px 120px at 10% -20%,
-        rgba(250, 200, 107, 0.09),
-        transparent 55%
-      );
-    }
-
-    &:hover {
-      border-color: rgba(250, 200, 107, 0.42);
-      box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.34),
-        0 0 0 1px rgba(250, 200, 107, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      transform: translateY(-4px);
-    }
-  }
-
-  .experience-job-title-row {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.65rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .experience-job-title-left {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.35rem 1rem;
-    min-width: 0;
-  }
-
-  .experience-job-link {
-    margin-left: auto;
-    flex-shrink: 0;
-    font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: rgba(250, 200, 107, 0.92);
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: lighten($gold, 6%);
-    }
-
-    &:focus-visible {
-      outline: 2px solid $gold;
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
-
-    &--icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.78);
-      transition: color 0.2s ease, transform 0.2s ease;
-
-      svg {
-        width: 22px;
-        height: 22px;
-        display: block;
-      }
-
-      &:hover {
-        color: #ffffff;
-        transform: translateY(-1px);
-      }
-    }
-  }
-
-  .experience-job-company {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: $gold;
-    text-shadow: 0 0 28px rgba(250, 200, 107, 0.25);
-  }
-
-  .experience-job-role {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.72);
-    letter-spacing: 0.02em;
-
-    &::before {
-      content: '·';
-      margin-right: 0.55rem;
-      color: rgba(255, 255, 255, 0.28);
-      font-weight: 400;
-    }
-  }
-
-  .experience-job-detail {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    font-size: 1.02rem;
-    line-height: 1.68;
-    color: rgba(255, 255, 255, 0.78);
+  .work-org {
+    font-family: $serif;
     font-weight: 400;
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
   }
 
-  .experience-job-detail + .experience-job-detail {
-    margin-top: 1.15rem;
+  .work-role,
+  .work-dates {
+    font-family: $mono;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $ink-2;
   }
 
-  @media (max-width: 768px) {
-    padding: 2rem 0 100px;
-
-    .experience-jobs-list {
-      margin-top: 1.85rem;
-      gap: 1.15rem;
-    }
-
-    .experience-job-card {
-      padding: 1.15rem 1.2rem 1.25rem 1.1rem;
-      border-radius: 12px;
-
-      &:hover {
-        transform: translateY(-2px);
-      }
-    }
-
-    .experience-job-detail {
-      font-size: 0.98rem;
-    }
+  .work-role {
+    margin-top: 0.85rem;
   }
 
-  @media (max-width: 480px) {
-    .experience-job-title-row {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0.65rem;
-    }
-
-    .experience-job-title-left {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
-    }
-
-    .experience-job-link {
-      margin-left: 0;
-      align-self: flex-end;
-    }
-
-    .experience-job-role::before {
-      display: none;
-    }
-
-    .experience-job-detail {
-      font-size: 0.94rem;
-      line-height: 1.62;
-    }
+  .work-dates {
+    color: $ink-3;
+    margin-bottom: 1.1rem;
   }
 }
 
-section#projects {
-  .projects-center {
-    max-width: 1120px;
+.work-body {
+  p {
+    max-width: 62ch;
+    color: $ink-2;
   }
 
-  .experience-jobs-list.projects-grid {
-    max-width: none;
+  p + p {
+    margin-top: 1.25rem;
+  }
+}
+
+.work-systems {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  border-top: 1px solid $ink;
+
+  .work-systems-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    align-items: stretch;
+    grid-template-columns: 12.5rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.7rem 0.5rem 0.7rem 0;
+    border-bottom: 1px solid $rule-soft;
+    transition: background-color 0.18s $ease, padding-left 0.18s $ease;
+
+    dd {
+      font-family: $mono;
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    &:hover {
+      background-color: $paper-lift;
+      padding-left: 0.5rem;
+
+      .label {
+        color: $accent;
+      }
+    }
   }
 
-  .experience-job-title-row {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.75rem;
-  }
-
-  .experience-job-title-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.2rem;
-  }
-
-  .experience-job-role::before {
-    display: none;
-  }
-
-  .experience-job-link {
-    margin-left: auto;
-    margin-top: 0.1rem;
-  }
-
-  .experience-job-detail {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 900px) {
-    .experience-jobs-list.projects-grid {
+  @media (max-width: 560px) {
+    .work-systems-row {
       grid-template-columns: 1fr;
-    }
-
-    .experience-job-title-row {
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-
-    .experience-job-title-left {
-      flex-direction: column;
-      align-items: flex-start;
       gap: 0.2rem;
     }
-
-    .experience-job-role::before {
-      display: none;
-    }
-
-    .experience-job-link {
-      margin-left: auto;
-    }
   }
 }
 
-section#experience {
-  .timeline{
-    .item{
-      display:flex;
-      opacity:0;
-      transition:all 0.3s ease-in-out;
-      position: relative;
-      top:-50px;
-      @for $i from 1 through 20 {
-        &:nth-child(#{$i + 1}){transition-delay: #{$i  * .3s}};
-      }
-      .date{
-        padding-right:15px;
-        display:flex;
-        position: relative;
-        span.year{
-          background-color: #5C5D61;
-          padding: 0px 10px;
-          height: 30px;
-          display:inline-block;
-          line-height:30px;
-        }
-        span.arrow{
-          display: inline-block;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-width: 15px 0 15px 10px;
-          border-color: transparent transparent transparent #5c5d61;
-        }
-      }
-
-
-      .separator{
-        display:flex;
-        flex-direction: column;
-        .dot{
-          width: 30px;
-          height: 30px;
-          background-color: $gold;
-          border-radius: 50%;
-          box-shadow: 0px 0px 20px $gold;
-        }
-        .line{
-          min-height: 10px;
-          width:2px;
-          background-color:#fff;
-          flex-grow: 1;
-          margin-left: 14px;
-          margin-top: 30px;
-          margin-bottom: 30px;
-          transition: all 0.5s ease-in-out;
-          max-height: 0;
-        }
-      }
-
-      .texts{
-        padding-left: 40px;
-        padding-bottom: 40px;
-        h3{
-          font-size:1.7rem;
-          font-weight:normal;
-        }
-        h4{
-          margin-top:6px;
-          margin-bottom: 6px;
-          font-weight:normal;
-          font-size: 1.4rem;
-        }
-        p{
-          color:rgba(255,255,255,0.55);
-          line-height:1.3rem;
-          margin-top: 10px;
-        }
-      }
-    }
-  }
-}
-
-section#experience.visible div.timeline div.item{
-  opacity:1;
-  top:0;
-}
-section#experience div.timeline div.item{
-  @for $i from 1 through 20 {
-    &:nth-child(#{$i + 1}){
-      .line{
-        transition-delay: #{($i  * .3s)}
-      }
-    };
-  }
-}
-section#experience.visible div.timeline div.item .line{
-  max-height:200px;
-}
-
-section#experience.visible .experience-job-card,
-section#projects.visible .experience-job-card {
-  opacity: 1;
-  transform: translateY(0);
-
-  &:nth-child(1) {
-    transition-delay: 0.07s;
+@media (max-width: 860px) {
+  .work-entry {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  &:nth-child(2) {
-    transition-delay: 0.15s;
-  }
-
-  &:nth-child(3) {
-    transition-delay: 0.23s;
+  .work-side {
+    position: static;
   }
 }

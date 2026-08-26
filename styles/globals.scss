@@ -1,61 +1,274 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+Pro:wght@400;600;700&display=swap');
-@import 'hero';
-@import 'project-card';
-@import 'calendar-ui';
-@import 'ticketmaster-ui';
-@import 'phishing-detector-ui';
-@import 'fantasy-football-ui';
-@import 'floating-clouds';
-@import 'job-alert-tool-ui';
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+// ── tokens ────────────────────────────────────────────────────────────────────
+$paper: #edebe4;
+$paper-deep: #e5e2d9;
+$paper-lift: #f4f2ec;
+$ink: #191813;
+$ink-2: rgba(25, 24, 19, 0.74);
+$ink-3: rgba(25, 24, 19, 0.5);
+$rule: rgba(25, 24, 19, 0.18);
+$rule-soft: rgba(25, 24, 19, 0.09);
+$accent: #ad2f16;
+
+$serif: 'Instrument Serif', 'Source Serif Pro', Georgia, serif;
+$sans: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+$ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+$shell: 1240px;
+
+// ── reset ─────────────────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-html{
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
-body{
-    background-color: #222328;
-    font-family: 'Roboto', sans-serif;
-    color:#fff;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-overflow-scrolling: touch;
+
+body {
+  background-color: $paper;
+  color: $ink;
+  font-family: $sans;
+  font-size: 17px;
+  line-height: 1.62;
+  font-feature-settings: 'kern' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-.center{
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    
-    @media (max-width: 768px) {
-        padding: 0 1.5rem;
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: $ink;
+  color: $paper;
+}
+
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+}
+
+// ── layout primitives ─────────────────────────────────────────────────────────
+.shell {
+  position: relative;
+  width: 100%;
+  max-width: $shell;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3.25rem);
+}
+
+// faint column rules: structure, not decoration
+.ruled {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      to right,
+      $rule-soft 0 1px,
+      transparent 1px 25%
+    );
+    opacity: 0.9;
+
+    @media (max-width: 900px) {
+      display: none;
     }
-    
-    @media (max-width: 480px) {
-        padding: 0 1rem;
-    }
+  }
 }
-img{
-    max-width:100%;
+
+.section {
+  position: relative;
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+  border-top: 1px solid $rule;
 }
-h2{
-    font-family: 'Source Serif Pro', serif;
-    font-size: 3rem;
-    font-weight:600;
-    margin-bottom: 20px;
-    
-    @media (max-width: 768px) {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-    
-    @media (max-width: 480px) {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
+
+.label {
+  font-family: $mono;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: $ink-3;
 }
-$gold: #FAC86B;
+
+.mono {
+  font-family: $mono;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+.measure {
+  max-width: 62ch;
+}
+
+// ── section headers ───────────────────────────────────────────────────────────
+.section-head {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0 1.25rem;
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+
+  .section-index {
+    font-family: $mono;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: $accent;
+  }
+
+  .section-title {
+    font-family: $serif;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .section-note {
+    font-family: $mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $ink-3;
+    text-align: right;
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+
+    .section-note {
+      display: none;
+    }
+  }
+}
+
+// ── links ─────────────────────────────────────────────────────────────────────
+.arrow-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: $mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $ink;
+  padding-bottom: 2px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: color 0.18s $ease, background-size 0.22s $ease;
+
+  .arrow-link-mark {
+    transition: transform 0.22s $ease;
+  }
+
+  &:hover {
+    color: $accent;
+
+    .arrow-link-mark {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.text-link {
+  color: $ink;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: color 0.18s $ease;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+// ── code artifacts ────────────────────────────────────────────────────────────
+.code {
+  margin: 0;
+  border: 1px solid $ink;
+  background: $ink;
+  color: rgba(237, 235, 228, 0.92);
+  overflow: hidden;
+
+  .code-path {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0.9rem;
+    border-bottom: 1px solid rgba(237, 235, 228, 0.2);
+    font-family: $mono;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(237, 235, 228, 0.62);
+  }
+
+  pre {
+    margin: 0;
+    padding: 0.95rem 0.9rem 1.1rem;
+    overflow-x: auto;
+  }
+
+  code {
+    font-family: $mono;
+    font-size: 0.775rem;
+    line-height: 1.72;
+    white-space: pre;
+  }
+
+  .c-dim {
+    color: rgba(237, 235, 228, 0.45);
+  }
+
+  .c-key {
+    color: #e5b567;
+  }
+
+  .c-add {
+    color: #9ec27a;
+  }
+
+  .c-del {
+    color: #e08b72;
+  }
+}
+
+// legacy container kept for long-form writing pages
+.center {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2rem);
+}

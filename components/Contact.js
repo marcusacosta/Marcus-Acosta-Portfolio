@@ -1,13 +1,58 @@
+const CHANNELS = [
+  {
+    key: "Email",
+    value: "marcus.alan.acosta@gmail.com",
+    href: "mailto:marcus.alan.acosta@gmail.com",
+    mark: "→",
+  },
+  {
+    key: "GitHub",
+    value: "/marcusacosta",
+    href: "https://github.com/marcusacosta",
+    mark: "↗",
+  },
+  {
+    key: "LinkedIn",
+    value: "in/marcusacostadev",
+    href: "https://www.linkedin.com/in/marcusacostadev",
+    mark: "↗",
+  },
+];
+
 export default function Contact() {
   return (
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div>
-        <div className="box">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 128C0 92.65 28.65 64 64 64H448C483.3 64 512 92.65 512 128V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V128zM48 128V150.1L220.5 291.7C241.1 308.7 270.9 308.7 291.5 291.7L464 150.1V127.1C464 119.2 456.8 111.1 448 111.1H64C55.16 111.1 48 119.2 48 127.1L48 128zM48 212.2V384C48 392.8 55.16 400 64 400H448C456.8 400 464 392.8 464 384V212.2L322 328.8C283.6 360.3 228.4 360.3 189.1 328.8L48 212.2z"/></svg>
-          <a href="mailto:marcus.alan.acosta@gmail.com">marcus.alan.acosta@gmail.com</a>
+    <section id="contact" className="section contact">
+      <div className="shell ruled">
+        <header className="section-head">
+          <span className="section-index">05</span>
+          <h2 className="section-title">Contact</h2>
+          <span className="section-note">Email is fastest</span>
+        </header>
+
+        <div className="contact-grid">
+          <p className="contact-statement">
+            Open to work on ML systems, inference, and research engineering.
+          </p>
+
+          <ul className="contact-list">
+            {CHANNELS.map(({ key, value, href, mark }) => (
+              <li key={key}>
+                <a
+                  className="contact-row"
+                  href={href}
+                  target={href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={
+                    href.startsWith("mailto:") ? undefined : "noopener noreferrer"
+                  }
+                >
+                  <span className="contact-key">{key}</span>
+                  <span className="contact-value">{value}</span>
+                  <span className="contact-mark">{mark}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <br />
       </div>
     </section>
   );
