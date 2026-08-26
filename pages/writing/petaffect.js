@@ -1,3 +1,4 @@
+import Link from "next/link";
 import WritingLayout from "../../components/WritingLayout";
 
 export default function PetAffectPost() {
@@ -8,9 +9,9 @@ export default function PetAffectPost() {
     >
       <article className="blog-article">
           <div className="center">
-            <a className="blog-back" href="/#projects">
+            <Link className="blog-back" href="/#projects">
               ← Back to projects
-            </a>
+            </Link>
             <p className="blog-kicker">Research proposal</p>
             <h1>PetAffect</h1>
             <p className="blog-subtitle">

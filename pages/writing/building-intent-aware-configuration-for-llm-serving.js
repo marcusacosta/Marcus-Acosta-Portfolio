@@ -1,3 +1,4 @@
+import Link from "next/link";
 import WritingLayout from "../../components/WritingLayout";
 
 export default function IntentAwarePagedAttentionPost() {
@@ -8,9 +9,9 @@ export default function IntentAwarePagedAttentionPost() {
     >
       <article className="blog-article">
         <div className="center">
-          <a className="blog-back" href="/#projects">
+          <Link className="blog-back" href="/#projects">
             ← Back to projects
-          </a>
+          </Link>
           <p className="blog-kicker">Open source</p>
           <h1>Building Intent-Aware Configuration for LLM Serving</h1>
           <p className="blog-meta">Marcus Acosta</p>
