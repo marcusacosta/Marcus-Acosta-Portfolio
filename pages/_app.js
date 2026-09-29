@@ -1,4 +1,4 @@
-import '../styles/home.scss'
+import '../styles/writing.scss'
 import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }) {

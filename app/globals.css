@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+body {
+  background: #000;
+  color: #a3a3a3;
+  -webkit-font-smoothing: antialiased;
+}
+.portrait-blend {
+  -webkit-mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #000 48%,
+    rgba(0, 0, 0, 0.8) 68%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #000 48%,
+    rgba(0, 0, 0, 0.8) 68%,
+    transparent 100%
+  );
+}
+.terminal-type {
+  width: max-content;
+  max-width: 100%;
+  animation: terminal-type 5.5s steps(17, end) infinite;
+}
+.terminal-name {
+  animation-duration: 6.5s;
+  animation-delay: 700ms;
+  animation-timing-function: steps(13, end);
+}
+.terminal-specialty {
+  animation-duration: 7.5s;
+  animation-delay: 1400ms;
+  animation-timing-function: steps(30, end);
+}
+.terminal-location {
+  animation-duration: 6.5s;
+  animation-delay: 2400ms;
+  animation-timing-function: steps(20, end);
+}
+.terminal-cursor {
+  animation: terminal-blink 1s step-end infinite;
+}
+@keyframes terminal-type {
+  0%, 8% { clip-path: inset(0 100% 0 0); }
+  28%, 78% { clip-path: inset(0 0 0 0); }
+  98%, 100% { clip-path: inset(0 100% 0 0); }
+}
+@keyframes terminal-blink {
+  50% {
+    opacity: 0;
+  }
+}
+::selection {
+  background: #fff;
+  color: #000;
+}
+:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 5px;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
