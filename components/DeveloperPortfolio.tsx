@@ -1,21 +1,44 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    name: "LitGPT",
-    title: "Multi-turn fine-tuning that stays focused",
+    name: "DeepSpeed",
     description:
-      "Improved multi-turn fine-tuning by focusing training on assistant replies across complete conversations while preserving existing training behavior. Controlled experiments evaluated effects on response quality, context retention, and general capabilities.",
-    href: "https://github.com/Lightning-AI/litgpt/pulls?q=author%3Amarcusacosta",
+      "An optimization library for efficient large-scale model training and inference. It provides tools for distributed training, memory optimization, and high-performance model deployment.",
+    href: "https://github.com/deepspeedai/DeepSpeed",
+    issues: [
+      {
+        title: "Clarify safe cross-rank aggregation for MoE forward timing breakdown",
+        href: "https://github.com/deepspeedai/DeepSpeed/issues/8863",
+      },
+    ],
+    pullRequests: [
+      {
+        title: "Fix subgroup communication bandwidth calculation",
+        href: "https://github.com/deepspeedai/DeepSpeed/pull/8862",
+      },
+    ],
   },
   {
-    name: "torchtitan",
-    title: "More consistent loss across model depth",
+    name: "Hugging Face TRL",
     description:
-      "Added per-depth loss normalization for Mixture-of-Depths training in DeepSeek models to improve consistency during distributed optimization. Analysis covered gradient scaling, padding, and variable-length sequences to identify when normalization helps.",
-    href: "https://github.com/pytorch/torchtitan/pulls?q=is%3Apr+state%3Aopen+author%3Amarcusacosta",
+      "A library for training and fine-tuning language models with reinforcement learning. It supports preference optimization methods such as PPO, DPO, and GRPO.",
+    href: "https://github.com/huggingface/trl",
+    issues: [
+      {
+        title: "[Bug] Validate num_prompts in completion callbacks",
+        href: "https://github.com/huggingface/trl/issues/7802",
+      },
+      {
+        title: "[Bug] Validate BEMACallback update_freq",
+        href: "https://github.com/huggingface/trl/issues/7806",
+      },
+    ],
   },
 ];
 const tools = [
@@ -25,7 +48,6 @@ const tools = [
       { name: "Python", icon: "python" },
       { name: "CUDA", icon: "nvidia" },
       { name: "Go", icon: "go" },
-      { name: "Rust", icon: "rust" },
       { name: "Bash", icon: "gnubash" },
       { name: "SQL", icon: "sql" },
     ],
@@ -35,23 +57,15 @@ const tools = [
     items: [
       { name: "PyTorch", icon: "pytorch" },
       { name: "XGBoost", icon: "xgboost" },
+      { name: "scikit-learn", icon: "python" },
+      { name: "NumPy", icon: "numpy" },
+      { name: "SciPy", icon: "scipy" },
       {
         name: "Hugging Face",
         icon: "huggingface",
-        detail: "Transformers, Tokenizers",
       },
+      { name: "DeepSpeed", icon: "deepspeed" },
       { name: "FastAPI", icon: "fastapi" },
-    ],
-  },
-  {
-    category: "Distributed Training",
-    items: [
-      {
-        name: "PyTorch Distributed",
-        icon: "pytorch",
-        detail: "DTensor, DeviceMesh",
-      },
-      { name: "Lightning Fabric", icon: "lightning" },
     ],
   },
   {
@@ -71,8 +85,8 @@ const tools = [
       { name: "PostgreSQL", icon: "postgresql" },
       { name: "Qdrant", icon: "qdrant" },
       { name: "Redis", icon: "redis" },
-      { name: "pandas", icon: "pandas" },
       { name: "PyArrow", icon: "apachearrow" },
+      { name: "Apache Parquet", icon: "apachearrow" },
     ],
   },
 ];
@@ -82,6 +96,16 @@ const link =
   "inline-flex items-center gap-1.5 text-sm text-neutral-400 transition-colors duration-200 hover:text-white";
 
 export default function DeveloperPortfolio() {
+  const [openContributions, setOpenContributions] = useState<string | null>(null);
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpenContributions(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, []);
+
   return (
     <>
       <a
@@ -148,12 +172,12 @@ export default function DeveloperPortfolio() {
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-5">
                   <a
-                    href="/Marcus_Acosta_Resume_2026.pdf"
+                    href="/Resume%20-%20Marcus%20Acosta.pdf"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-xs text-white underline decoration-neutral-700 underline-offset-4 transition-colors duration-200 hover:decoration-white"
                   >
-                    Résumé <ArrowUpRight size={14} />
+                    Resume <ArrowUpRight size={14} />
                   </a>
                 </div>
                 <p
@@ -223,36 +247,84 @@ export default function DeveloperPortfolio() {
                 key={project.name}
                 className="flex min-w-0 flex-col border-neutral-800 p-6 transition-colors duration-200 hover:bg-neutral-900/50 focus-within:bg-neutral-900/50 max-md:border-b max-md:last:border-b-0 md:border-r md:last:border-r-0"
               >
-                <p className="mb-2 font-mono text-xs text-neutral-500">
-                  {project.name}
-                </p>
                 <h3 className="text-xl font-medium leading-7 tracking-tight text-white">
                   <Link
                     href={project.href}
                     className="underline-offset-4 hover:underline"
                   >
-                    {project.title}
+                    {project.name}
                   </Link>
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm leading-7">
                   {project.description}
                 </p>
                 <div className="mt-auto flex flex-wrap justify-between gap-3 border-t border-neutral-800 pt-4">
-                  {project.href.startsWith("/") ? (
-                    <Link href={project.href} className={link}>
-                      Write-up <ArrowUpRight size={13} />
-                    </Link>
-                  ) : (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={link}
-                    >
-                      GitHub <ArrowUpRight size={13} />
-                    </a>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => setOpenContributions(project.name)}
+                    className={link}
+                  >
+                    Contributions <ArrowUpRight size={13} />
+                  </button>
                 </div>
+                {openContributions === project.name && (
+                  <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+                    role="presentation"
+                    onClick={() => setOpenContributions(null)}
+                  >
+                    <div
+                      role="dialog"
+                      aria-modal="true"
+                      aria-labelledby={`${project.name}-contributions`}
+                      className="w-full max-w-lg border border-neutral-700 bg-neutral-950 p-6 shadow-2xl"
+                      onClick={(event) => event.stopPropagation()}
+                    >
+                      <div className="flex items-start justify-between gap-6">
+                        <h4
+                          id={`${project.name}-contributions`}
+                          className="text-lg font-medium text-white"
+                        >
+                          Contributions
+                        </h4>
+                        <button
+                          type="button"
+                          onClick={() => setOpenContributions(null)}
+                          className="text-sm text-neutral-500 hover:text-white"
+                        >
+                          Close
+                        </button>
+                      </div>
+                      {["issues", "pullRequests"].map((type) => {
+                        const contributions = project[type as "issues" | "pullRequests"];
+                        if (!contributions?.length) return null;
+                        const heading = type === "issues" ? "Issues" : "Pull Requests";
+                        return (
+                          <div key={type} className="mt-6 first:mt-6">
+                            <h5 className="mb-2 font-mono text-xs uppercase tracking-wide text-neutral-500">
+                              {heading}
+                            </h5>
+                            <ul className="divide-y divide-neutral-800 border-y border-neutral-800">
+                              {contributions.map((contribution) => (
+                                <li key={contribution.href}>
+                                  <a
+                                    href={contribution.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex items-center justify-between gap-4 py-4 text-sm text-neutral-300 hover:text-white"
+                                  >
+                                    {contribution.title}
+                                    <ArrowUpRight size={13} />
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -281,7 +353,7 @@ export default function DeveloperPortfolio() {
                         alt=""
                         width={24}
                         height={24}
-                        className={`h-6 w-6 shrink-0 object-contain transition-all duration-200 group-hover:brightness-150 ${icon === "xgboost" ? "brightness-0 invert opacity-70" : ""}`}
+                        className={`h-6 w-6 shrink-0 object-contain transition-all duration-200 group-hover:brightness-150 ${["xgboost", "numpy", "scipy", "deepspeed"].includes(icon) ? "brightness-0 invert opacity-70" : ""}`}
                       />
                       <span>
                         {name}
